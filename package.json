@@ -7,12 +7,26 @@
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
+  "bin": {
+    "my-app": "./index.js"
+  },
+  "pkg": {
+    "assets": [
+      "index.html",
+      "styles.css",
+      "scripts.js"
+    ],
+    "targets": [ 
+      "node18-macos-arm64",
+      "node18-win-x64"
+    ],
+    "outputPath": "dist"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
     "multer": "^1.4.5-lts.1",
-    "node-fetch": "^3.3.2",
     "w3gjs": "^2.5.0"
   }
 }

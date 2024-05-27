@@ -35,6 +35,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/parse-w3g', upload.single('file'), async (req, res) => {
+    console.log('POST /parse-w3g');
+
     const username = req.body.username.toLowerCase() || "";
 
     if (!req.file) {
@@ -205,5 +207,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
