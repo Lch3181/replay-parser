@@ -4,17 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
   },
   "bin": {
-    "my-app": "./index.js"
+    "my-app": "./src/index.js"
   },
   "pkg": {
     "assets": [
-      "index.html",
-      "styles.css",
-      "scripts.js"
+      "./src/index.html",
+      "./src/styles.css",
+      "./src/scripts.js",
+      "./src/parser.js"
     ],
     "targets": [ 
       "node18-macos-arm64",
