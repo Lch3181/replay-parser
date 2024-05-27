@@ -63,6 +63,7 @@ async function parseW3G(filepath, username) {
     try {
         const buffer = fs.readFileSync(filepath);
         const parser = new ReplayParser();
+        let time = 0; //ms
         let playerData = null;
         let items = [];
 
@@ -71,6 +72,8 @@ async function parseW3G(filepath, username) {
         });
 
         parser.on("gamedatablock", (block) => {
+            time += block.timeIncrement || 0;
+
             if (block.commandBlocks && Array.isArray(block.commandBlocks) && block.commandBlocks.length === 0) {
                 return;
             }
@@ -78,8 +81,9 @@ async function parseW3G(filepath, username) {
             if (block.id === 0x1f) {
                 block.commandBlocks.forEach(commandBlock => {
                     commandBlock.actions.forEach(action => {
-                        if (action.id === 16 && action.abilityFlags === 64 && !containsNonNumberOrAlphabet(action.itemId)) {
+                        if (action.id === 16 && action.abilityFlags === 64 && isAlphabetOrDigit(action.itemId)) {
                             const newItem = {
+                                time: time,
                                 playerId: commandBlock.playerId,
                                 itemId: convertToAscii(action.itemId)
                             };
@@ -94,29 +98,45 @@ async function parseW3G(filepath, username) {
 
         const result = items.map((item) => {
             try {
+                const gameTime = msToReadableTime(item.time)
                 const playerName = getPlayerNameById(playerData, item.playerId);
                 if (username != "" && !playerName.toLowerCase().includes(username)) {
                     return null
                 }
                 const itemName = getItemNameById(item.itemId);
-                return `${playerName}: ${itemName}`;
+                return `${gameTime} ${playerName}: ${itemName}`;
             } catch (error) {
                 return null; // or handle the error in some other way
             }
         }).filter(entry => entry !== null);
 
-        return result
+        // Remove duplicates using Set
+        const uniqueResult = [...new Set(result)];
+
+        return uniqueResult
     } catch (error) {
         throw error;
     }
 }
 
-function containsNonNumberOrAlphabet(asciiArray) {
-    return asciiArray.some(charCode => {
-        const char = String.fromCharCode(charCode);
-        // Check if the character is not a number (0-9) or alphabet (A-Z, a-z)
-        return !/^[a-zA-Z0-9]$/.test(char);
-    });
+function isAlphabetOrDigit(asciiValues) {
+    return asciiValues.every(value => (value >= 48 && value <= 122));
+}
+
+function msToReadableTime(milliseconds) {
+    let remainingMs = milliseconds;
+
+    const hours = Math.floor(remainingMs / 3600000);
+    remainingMs %= 3600000;
+
+    const minutes = Math.floor(remainingMs / 60000);
+    remainingMs %= 60000;
+
+    const seconds = Math.floor(remainingMs / 1000);
+    const padWithZero = (num) => (num < 10 ? '0' + num : num);
+
+    const formattedTime = `${padWithZero(hours)}:${padWithZero(minutes)}:${padWithZero(seconds)}`;
+    return formattedTime;
 }
 
 function convertToAscii(array) {
