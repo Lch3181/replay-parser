@@ -17,21 +17,52 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         const body = document.createElement('p');
         body.innerText = 'Loading...';
 
+        const hoverPanel = document.createElement('div');
+        hoverPanel.className = 'hover-panel';
+        hoverPanel.innerHTML = "Loading...";
+
         resultDiv.appendChild(title);
         resultDiv.appendChild(body);
+        resultDiv.appendChild(hoverPanel);
         resultsDiv.appendChild(resultDiv);
 
         const formData = new FormData();
         formData.append('file', file);
         formData.append('username', username);
 
+        resultDiv.addEventListener('mouseenter', () => {
+            hoverPanel.style.display = 'block';
+        });
+
+        resultDiv.addEventListener('mouseleave', () => {
+            hoverPanel.style.display = 'none';
+        });
+
+        resultDiv.addEventListener('mousemove', (e) => {
+            hoverPanel.style.left = e.pageX + 15 + 'px';
+            hoverPanel.style.top = e.pageY + 15 + 'px';
+        });
+
         fetch('/parse-w3g', {
             method: 'POST',
             body: formData
         })
-        .then(response => response.text())
-        .then(result => {
-            body.innerText = result;
+        .then(response => response.json())
+        .then(data => {
+            const gameData = data.gameData;
+            const loots = data.loots;
+
+            const gameDataHtml = `
+                <strong>Game Infomation:</strong><br>
+                Version: ${gameData.version || 0}<br>
+                Length: ${gameData.length}<br>
+                Map: ${gameData.map}<br>
+                Host: ${gameData.host}<br>
+                Game Name: ${gameData.gameName}
+            `;
+            hoverPanel.innerHTML = gameDataHtml;
+
+            body.innerText = loots.join('\n');
         })
         .catch(error => {
             body.innerText = 'Error: ' + error.message;

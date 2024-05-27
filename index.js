@@ -45,13 +45,9 @@ app.post('/parse-w3g', upload.single('file'), async (req, res) => {
 
     try {
         const filePath = req.file.path;
-        let items = await parseW3G(filePath, username);
+        let result = await parseW3G(filePath, username);
 
-        if (items.length !== 0) {
-            res.send(items.join('\n'));
-        } else {
-            res.send("None");
-        }
+        res.send(result)
     } catch (error) {
         res.status(500).send(error.message);
     } finally {
@@ -64,11 +60,19 @@ async function parseW3G(filepath, username) {
         const buffer = fs.readFileSync(filepath);
         const parser = new ReplayParser();
         let time = 0; //ms
+        let gameData = {};
         let playerData = null;
         let items = [];
 
         parser.on("basic_replay_information", (info) => {
             playerData = info.metadata.playerRecords;
+            gameData = {
+                version: info.subheader.version,
+                length: msToReadableTime(info.subheader.replayLengthMS),
+                map: info.metadata.map.mapName,
+                host: info.metadata.map.creator,
+                gameName: info.metadata.gameName
+            };
         });
 
         parser.on("gamedatablock", (block) => {
@@ -96,13 +100,15 @@ async function parseW3G(filepath, username) {
 
         await parser.parse(buffer);
 
-        const result = items.map((item) => {
+        // optained loots from chest
+        const loots = items.map((item) => {
             try {
                 const gameTime = msToReadableTime(item.time)
                 const playerName = getPlayerNameById(playerData, item.playerId);
                 if (username != "" && !playerName.toLowerCase().includes(username)) {
                     return null
                 }
+
                 const itemName = getItemNameById(item.itemId);
                 return `${gameTime} ${playerName}: ${itemName}`;
             } catch (error) {
@@ -111,9 +117,15 @@ async function parseW3G(filepath, username) {
         }).filter(entry => entry !== null);
 
         // Remove duplicates using Set
-        const uniqueResult = [...new Set(result)];
+        const uniqueloots = [...new Set(loots)];
 
-        return uniqueResult
+        // result json
+        const result = {
+            gameData: gameData,
+            loots: uniqueloots
+        };
+        
+        return result
     } catch (error) {
         throw error;
     }
@@ -167,41 +179,6 @@ function getPlayerNameById(playerData, id) {
     }
 
     return player.playerName;
-}
-
-function extractVersion(filename) {
-    const regex = /v(\d+\.\d+[a-z]?)/i;
-    const match = filename.match(regex);
-    return match ? match[1] : null;
-}
-
-function compareVersions(version1, version2) {
-    const parseVersion = (version) => {
-        const regex = /(\d+)\.(\d+)([a-z]?)/i;
-        const match = version.match(regex);
-        return match ? {
-            major: parseInt(match[1], 10),
-            minor: parseInt(match[2], 10),
-            suffix: match[3] || ''
-        } : null;
-    };
-
-    const v1 = parseVersion(version1);
-    const v2 = parseVersion(version2);
-
-    if (!v1 || !v2) {
-        throw new Error('Invalid version format');
-    }
-
-    if (v1.major !== v2.major) {
-        return v1.major - v2.major;
-    }
-
-    if (v1.minor !== v2.minor) {
-        return v1.minor - v2.minor;
-    }
-
-    return v1.suffix.localeCompare(v2.suffix);
 }
 
 // Serve static files (CSS, JS)

@@ -52,3 +52,20 @@ h3 {
 p {
     color: #e0e0e0;
 }
+.hover-panel {
+    display: none;
+    position: absolute;
+    width: 250px;
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    z-index: 1000;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #e0e0e0;
+    pointer-events: none; /* Ensures the panel doesn't block other mouse events */
+}
+.result-div:hover .hover-panel {
+    display: block;
+}
