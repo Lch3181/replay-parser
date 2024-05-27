@@ -53,7 +53,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             const loots = data.loots;
 
             const gameDataHtml = `
-                <strong>Game Infomation:</strong><br>
+                <strong>Game Information:</strong><br>
                 Version: ${gameData.version || 0}<br>
                 Length: ${gameData.length}<br>
                 Map: ${gameData.map}<br>
