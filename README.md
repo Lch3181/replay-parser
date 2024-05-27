@@ -21,12 +21,12 @@ A Node.js application for parsing `.w3g` replay files using Express.js and Multe
 
 1. Download Executable:
 
-   download from [release](https://github.com/Lch#3181/replay-parser/release) 
+   download from [release](https://github.com/Lch3181/replay-parser/release) 
 
 2. Clone the repository:
 
    ```sh
-   git clone https://github.com/Lch#3181/replay-parser.git
+   git clone https://github.com/Lch3181/replay-parser.git
    cd replay-parser
    ```
 
