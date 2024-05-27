@@ -62,7 +62,11 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             `;
             hoverPanel.innerHTML = gameDataHtml;
 
-            body.innerText = loots.join('\n');
+            if (loots.length === 0) {
+                body.innerText = 'No items found.';
+            } else {
+                body.innerText = loots.join('\n');
+            }
         })
         .catch(error => {
             body.innerText = 'Error: ' + error.message;
