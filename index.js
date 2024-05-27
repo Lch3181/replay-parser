@@ -67,20 +67,6 @@ async function parseW3G(filepath, username) {
         let items = [];
 
         parser.on("basic_replay_information", (info) => {
-            const filename = info.metadata.map.mapName;
-            const extractedVersion = extractVersion(filename);
-            const comparisonVersion = "0.63c"; // patch that with chest loot
-
-            if (extractedVersion) {
-                if (compareVersions(extractedVersion, comparisonVersion) >= 0) {
-                    //console.log('The version is greater than or equal to v0.63c');
-                } else {
-                    throw new Error('The version is less than v0.63c');
-                }
-            } else {
-                throw new Error('No version found in the filename');
-            }
-
             playerData = info.metadata.playerRecords;
         });
 
