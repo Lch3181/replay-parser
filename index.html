@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload .w3g Files</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Upload .w3g Files</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="files" id="fileInput" accept=".w3g" multiple required>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="results"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
