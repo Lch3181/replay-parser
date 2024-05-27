@@ -35,13 +35,15 @@ app.get('/', (req, res) => {
 });
 
 app.post('/parse-w3g', upload.single('file'), async (req, res) => {
+    const username = req.body.username.toLowerCase() || "";
+
     if (!req.file) {
         return res.status(400).send('No file uploaded.');
     }
 
     try {
         const filePath = req.file.path;
-        let items = await parseW3G(filePath);
+        let items = await parseW3G(filePath, username);
 
         if (items.length !== 0) {
             res.send(items.join('\n'));
@@ -55,7 +57,7 @@ app.post('/parse-w3g', upload.single('file'), async (req, res) => {
     }
 });
 
-async function parseW3G(filepath) {
+async function parseW3G(filepath, username) {
     try {
         const buffer = fs.readFileSync(filepath);
         const parser = new ReplayParser();
@@ -105,6 +107,9 @@ async function parseW3G(filepath) {
         const result = items.map((item) => {
             try {
                 const playerName = getPlayerNameById(playerData, item.playerId);
+                if (username != "" && !playerName.toLowerCase().includes(username)) {
+                    return null
+                }
                 const itemName = getItemNameById(item.itemId);
                 return `${playerName}: ${itemName}`;
             } catch (error) {

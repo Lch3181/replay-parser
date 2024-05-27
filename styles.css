@@ -18,6 +18,13 @@ input[type="file"] {
     padding: 10px;
     border-radius: 5px;
 }
+input[type="text"] {
+    background-color: #333333;
+    color: #e0e0e0;
+    border: 1px solid #555555;
+    padding: 10px;
+    border-radius: 5px;
+}
 button {
     background-color: #6200ea;
     color: #ffffff;

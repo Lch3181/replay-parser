@@ -2,6 +2,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     event.preventDefault();
 
     const files = document.getElementById('fileInput').files;
+    const username = document.getElementById('usernameInput').value;
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = ''; // Clear previous results
 
@@ -22,6 +23,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
         const formData = new FormData();
         formData.append('file', file);
+        formData.append('username', username);
 
         fetch('/parse-w3g', {
             method: 'POST',
