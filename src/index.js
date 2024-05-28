@@ -1,3 +1,6 @@
+// Suppress all warnings
+process.removeAllListeners('warning');
+
 const express = require('express');
 const multer = require('multer');
 const fs = require('fs');
