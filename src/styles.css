@@ -39,6 +39,11 @@ button {
     cursor: pointer;
 }
 
+.result-div .open-button {
+    position: absolute;
+    right: 35px;
+}
+
 button:hover {
     background-color: #3700b3;
 }

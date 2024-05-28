@@ -56,13 +56,16 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         
         // Create the chat button
         const chatButton = document.createElement('button');
+        chatButton.disabled = true
+        chatButton.id = `open-button-${file.name}`
+        chatButton.className = "open-button"
         chatButton.innerText = 'Chat History';
         chatButton.addEventListener('click', () => {
             document.getElementById(`chat-popup-${file.name}`).style.display = 'block';
         });
 
-        resultDiv.appendChild(title);
         resultDiv.appendChild(chatButton);
+        resultDiv.appendChild(title);
         resultDiv.appendChild(body);
         resultDiv.appendChild(hoverPanel);
         resultsDiv.appendChild(resultDiv);
@@ -128,6 +131,9 @@ function fetchChatHistory(fileName, chatData) {
         chatLine.innerHTML = `<span style="color: inherit;">[${chat.mode}] ${chat.time} <span style="color:#${chat.color};">${chat.player}</span>: ${chat.message}</span>`;
         chatHistory.appendChild(chatLine);
     });
+
+    const chatButton = document.getElementById(`open-button-${fileName}`)
+    chatButton.disabled = false
 }
 
 function closeChatPopup() {
