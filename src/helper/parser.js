@@ -25,10 +25,11 @@ async function parseW3G(filepath, username) {
         let time = 0; //ms
         let gameData = {};
         let playerData = null;
+        let chat = [];
         let items = [];
 
         parser.on("basic_replay_information", (info) => {
-            playerData = info.metadata.playerRecords;
+            playerData = mapPlayerData(info.metadata.playerRecords, info.metadata.slotRecords)
             gameData = {
                 version: info.subheader.version,
                 length: msToReadableTime(info.subheader.replayLengthMS),
@@ -41,6 +42,20 @@ async function parseW3G(filepath, username) {
         parser.on("gamedatablock", (block) => {
             time += block.timeIncrement || 0;
 
+            // user chat message
+            if (block.id === 0x20) {
+                const player = getPlayerById(playerData, block.playerId)
+                const chatData = {
+                    time: msToReadableTime(time),
+                    player: player.playerName,
+                    color: player.hex,
+                    mode: getMessageType(block.mode),
+                    message: block.message
+                };
+                chat.push(chatData)
+            }
+
+            // user action
             if (block.commandBlocks && Array.isArray(block.commandBlocks) && block.commandBlocks.length === 0) {
                 return;
             }
@@ -67,7 +82,7 @@ async function parseW3G(filepath, username) {
         const loots = items.map((item) => {
             try {
                 const gameTime = msToReadableTime(item.time)
-                const playerName = getPlayerNameById(playerData, item.playerId);
+                const playerName = getPlayerById(playerData, item.playerId).playerName;
                 if (username != "" && !playerName.toLowerCase().includes(username)) {
                     return null;
                 }
@@ -85,6 +100,7 @@ async function parseW3G(filepath, username) {
         // result json
         const result = {
             gameData: gameData,
+            chatData: chat,
             loots: uniqueloots
         };
 
@@ -131,7 +147,7 @@ function getItemNameById(id) {
     return item.name;
 }
 
-function getPlayerNameById(playerData, id) {
+function getPlayerById(playerData, id) {
     if (!playerData) {
         throw new Error('Player data not initialized. Please call init() first.');
     }
@@ -141,7 +157,61 @@ function getPlayerNameById(playerData, id) {
         throw new Error(`Player with id ${id} not found.`);
     }
 
-    return player.playerName;
+    return player;
+}
+
+// Function to map player data with id, name, and color details
+function mapPlayerData(playerRecords, slotRecords) {
+
+    const colors = [
+        { id: 0, name: 'Red', hex: 'FF0303', rgb: [255, 3, 3] },
+        { id: 1, name: 'Blue', hex: '0042FF', rgb: [0, 66, 255] },
+        { id: 2, name: 'Teal', hex: '1CB619', rgb: [28, 230, 185] },
+        { id: 3, name: 'Purple', hex: '540081', rgb: [80, 0, 129] },
+        { id: 4, name: 'Yellow', hex: 'FFFF01', rgb: [255, 255, 1] },
+        { id: 5, name: 'Orange', hex: 'FE8A0E', rgb: [254, 138, 14] },
+        { id: 6, name: 'Green', hex: '20C000', rgb: [32, 192, 0] },
+        { id: 7, name: 'Pink', hex: 'E55BB0', rgb: [229, 91, 176] },
+        { id: 8, name: 'Grey', hex: '959697', rgb: [149, 150, 151] },
+        { id: 9, name: 'Light Blue', hex: '7EBFF1', rgb: [126, 191, 241] },
+        { id: 10, name: 'Dark Green', hex: '106246', rgb: [16, 98, 70] },
+        { id: 11, name: 'Brown', hex: '4E2A04', rgb: [74, 42, 4] }
+    ];
+
+    // Create a mapping of playerId to playerName
+    const playerMap = {};
+    playerRecords.forEach(record => {
+        playerMap[record.playerId] = record.playerName;
+    });
+
+    // Create the final mapping of player data with id, name, and color details, only for players
+    const playerData = slotRecords
+        .filter(slot => slot.playerId !== 0)
+        .map(slot => {
+            const color = colors.find(c => c.id === slot.color);
+            return {
+                playerId: slot.playerId,
+                playerName: playerMap[slot.playerId] || 'Unknown',
+                colorId: color ? color.name : 'Unknown',
+                hex: color ? color.hex : 'Unknown',
+                rgb: color ? color.rgb : 'Unknown'
+            };
+        });
+
+    return playerData;
+}
+
+function getMessageType(code) {
+    switch (code) {
+        case 0x00:
+            return "All";
+        case 0x01:
+            return "Allies";
+        case 0x02:
+            return "Observers";
+        default:
+            return "Unknown";
+    }
 }
 
 module.exports = {

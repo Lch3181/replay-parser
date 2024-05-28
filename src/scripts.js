@@ -1,9 +1,10 @@
-document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+document.getElementById('uploadForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const files = document.getElementById('fileInput').files;
     const username = document.getElementById('usernameInput').value;
     const resultsDiv = document.getElementById('results');
+    const chatPopups = document.getElementById('chatPopups')
     resultsDiv.innerHTML = ''; // Clear previous results
 
     Array.from(files).forEach(file => {
@@ -21,10 +22,41 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         hoverPanel.className = 'hover-panel';
         hoverPanel.innerHTML = "Loading...";
 
+        // Create the chat popup
+        const chatPopupDiv = document.createElement('div');
+        chatPopupDiv.className = 'chat-popup';
+        chatPopupDiv.id = `chat-popup-${file.name}`;
+
+        const closeChatButton = document.createElement('button');
+        closeChatButton.className = 'close-button';
+        closeChatButton.innerText = 'Close';
+        closeChatButton.addEventListener('click', () => {
+            document.getElementById(`chat-popup-${file.name}`).style.display = 'none';
+        });
+
+        const chatTitle = document.createElement('h4');
+        chatTitle.innerText = 'Chat History';
+
+        const chatHistory = document.createElement('ul');
+        chatHistory.id = `chat-history-${file.name}`;
+
+        chatPopupDiv.appendChild(closeChatButton);
+        chatPopupDiv.appendChild(chatTitle);
+        chatPopupDiv.appendChild(chatHistory);
+
+        // Create the chat button
+        const chatButton = document.createElement('button');
+        chatButton.innerText = 'Chat History';
+        chatButton.addEventListener('click', () => {
+            document.getElementById(`chat-popup-${file.name}`).style.display = 'block';
+        });
+
         resultDiv.appendChild(title);
+        resultDiv.appendChild(chatButton);
         resultDiv.appendChild(body);
         resultDiv.appendChild(hoverPanel);
         resultsDiv.appendChild(resultDiv);
+        chatPopups.appendChild(chatPopupDiv)
 
         const formData = new FormData();
         formData.append('file', file);
@@ -47,12 +79,13 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             method: 'POST',
             body: formData
         })
-        .then(response => response.json())
-        .then(data => {
-            const gameData = data.gameData;
-            const loots = data.loots;
+            .then(response => response.json())
+            .then(data => {
+                const gameData = data.gameData;
+                const loots = data.loots;
+                const chat = data.chatData
 
-            const gameDataHtml = `
+                const gameDataHtml = `
                 <strong>Game Information:</strong><br>
                 Version: ${gameData.version || 0}<br>
                 Length: ${gameData.length}<br>
@@ -60,16 +93,33 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
                 Host: ${gameData.host}<br>
                 Game Name: ${gameData.gameName}
             `;
-            hoverPanel.innerHTML = gameDataHtml;
+                hoverPanel.innerHTML = gameDataHtml;
 
-            if (loots.length === 0) {
-                body.innerText = 'No items found.';
-            } else {
-                body.innerText = loots.join('\n');
-            }
-        })
-        .catch(error => {
-            body.innerText = 'Error: ' + error.message;
-        });
+                if (loots.length === 0) {
+                    body.innerText = 'No items found.';
+                } else {
+                    body.innerText = loots.join('\n');
+                }
+
+                fetchChatHistory(file.name, chat); // Function to fetch and display chat history
+            })
+            .catch(error => {
+                body.innerText = 'Error: ' + error.message;
+            });
     });
 });
+
+function fetchChatHistory(fileName, chatData) {
+    const chatHistory = document.getElementById(`chat-history-${fileName}`);
+    chatHistory.innerHTML = ''; // Clear previous chat history
+
+    chatData.forEach(chat => {
+        const chatLine = document.createElement('li');
+        chatLine.innerHTML = `<span style="color: inherit;">[${chat.mode}] ${chat.time} <span style="color:#${chat.color};">${chat.player}</span>: ${chat.message}</span>`;
+        chatHistory.appendChild(chatLine);
+    });
+}
+
+function closeChatPopup() {
+    document.getElementById('chatPopup').style.display = 'none';
+}
