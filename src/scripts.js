@@ -61,6 +61,12 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         chatButton.className = "open-button"
         chatButton.innerText = 'Chat History';
         chatButton.addEventListener('click', () => {
+            // Hide all chat-popups
+            const chatPopups = document.querySelectorAll('[id^="chat-popup-"]');
+            chatPopups.forEach(popup => {
+                popup.style.display = 'none';
+            });
+
             document.getElementById(`chat-popup-${file.name}`).style.display = 'block';
         });
 
