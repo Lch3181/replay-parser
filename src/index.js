@@ -7,68 +7,74 @@ const fs = require('fs');
 const path = require('path');
 const cluster = require('cluster');
 const os = require('os');
+const portfinder = require('portfinder')
 const { init, parseW3G } = require('./helper/parser');
 
 const numCPUs = os.cpus().length;
 const port = 3000;
 
-if (cluster.isMaster) {
-    console.log(`Server is running on http://localhost:${port}`);
+portfinder.setBasePort(port);
+portfinder.getPortPromise()
+    .then((port) => {
 
-    // Fork workers
-    for (let i = 0; i < numCPUs; i++) {
-        cluster.fork();
-    }
+        if (cluster.isMaster) {
+            console.log(`Server is running on http://localhost:${port}`);
 
-    cluster.on('exit', (worker, code, signal) => {
-        console.log(`Thread ${worker.process.pid} died`);
-        // Optionally restart the worker
-        cluster.fork();
-    });
-} else {
-    const app = express();
+            // Fork workers
+            for (let i = 0; i < numCPUs; i++) {
+                cluster.fork();
+            }
 
-    // Initialize item data on server start
-    init();
+            cluster.on('exit', (worker, code, signal) => {
+                console.log(`Thread ${worker.process.pid} died`);
+                // Optionally restart the worker
+                cluster.fork();
+            });
+        } else {
+            const app = express();
 
-    // Set up multer for file uploads
-    const upload = multer({ dest: 'uploads/' });
+            // Initialize item data on server start
+            init();
 
-    // Serve index.html
-    app.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, 'index.html'));
-    });
+            // Set up multer for file uploads
+            const upload = multer({ dest: 'uploads/' });
 
-    app.post('/parse-w3g', upload.single('file'), async (req, res) => {
-        console.log(`Thread ${process.pid} POST /parse-w3g ${req.file.originalname || 'Unknown Filename'}`);
+            // Serve index.html
+            app.get('/', (req, res) => {
+                res.sendFile(path.join(__dirname, 'index.html'));
+            });
 
-        const username = req.body.username.toLowerCase() || "";
+            app.post('/parse-w3g', upload.single('file'), async (req, res) => {
+                console.log(`Thread ${process.pid} POST /parse-w3g ${req.file.originalname || 'Unknown Filename'}`);
 
-        if (!req.file) {
-            return res.status(400).send('No file uploaded.');
+                const username = req.body.username.toLowerCase() || "";
+
+                if (!req.file) {
+                    return res.status(400).send('No file uploaded.');
+                }
+
+                try {
+                    const filePath = req.file.path;
+                    let result = await parseW3G(filePath, username);
+
+                    res.send(result);
+                } catch (error) {
+                    res.status(500).send(error.message);
+                } finally {
+                    fs.unlinkSync(req.file.path); // Clean up the uploaded file
+                }
+            });
+
+            // Serve static files (CSS, JS)
+            app.use(express.static(path.join(__dirname)));
+
+            // Serve index.html
+            app.get('/', (req, res) => {
+                res.sendFile(path.join(__dirname, 'index.html'));
+            });
+
+            app.listen(port, () => {
+                console.log(`Thread ${process.pid} is running.`);
+            });
         }
-
-        try {
-            const filePath = req.file.path;
-            let result = await parseW3G(filePath, username);
-
-            res.send(result);
-        } catch (error) {
-            res.status(500).send(error.message);
-        } finally {
-            fs.unlinkSync(req.file.path); // Clean up the uploaded file
-        }
-    });
-
-    // Serve static files (CSS, JS)
-    app.use(express.static(path.join(__dirname)));
-
-    // Serve index.html
-    app.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, 'index.html'));
-    });
-
-    app.listen(port, () => {
-        console.log(`Thread ${process.pid} is running.`);
-    });
-}
+    })

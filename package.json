@@ -29,6 +29,7 @@
     "express": "^4.19.2",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.1",
+    "portfinder": "^1.0.32",
     "w3gjs": "^2.5.0"
   }
 }
