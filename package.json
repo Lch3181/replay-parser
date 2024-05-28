@@ -17,7 +17,7 @@
       "./src/scripts.js",
       "./src/parser.js"
     ],
-    "targets": [ 
+    "targets": [
       "node18-macos-arm64",
       "node18-win-x64"
     ],
@@ -28,6 +28,7 @@
   "dependencies": {
     "express": "^4.19.2",
     "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.1",
     "w3gjs": "^2.5.0"
   }
 }
