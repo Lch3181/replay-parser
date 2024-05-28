@@ -12,9 +12,6 @@ const port = 3000;
 if (cluster.isMaster) {
     console.log(`Server is running on http://localhost:${port}`);
 
-    // Initialize item data on server start
-    init();
-
     // Fork workers
     for (let i = 0; i < numCPUs; i++) {
         cluster.fork();
@@ -27,6 +24,9 @@ if (cluster.isMaster) {
     });
 } else {
     const app = express();
+
+    // Initialize item data on server start
+    init();
 
     // Set up multer for file uploads
     const upload = multer({ dest: 'uploads/' });

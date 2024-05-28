@@ -12,7 +12,6 @@ async function init() {
             throw new Error('Network response was not ok ' + response.statusText);
         }
         itemData = await response.json();
-        console.log('Item data initialized.');
     } catch (error) {
         console.error('Error fetching or parsing item data:', error);
     }
