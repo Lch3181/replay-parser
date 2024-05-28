@@ -4,7 +4,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     const files = document.getElementById('fileInput').files;
     const username = document.getElementById('usernameInput').value;
     const resultsDiv = document.getElementById('results');
-    const chatPopups = document.getElementById('chatPopups')
+    const chatPopups = document.getElementById('chat-container')
     resultsDiv.innerHTML = ''; // Clear previous results
 
     Array.from(files).forEach(file => {
@@ -26,24 +26,34 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         const chatPopupDiv = document.createElement('div');
         chatPopupDiv.className = 'chat-popup';
         chatPopupDiv.id = `chat-popup-${file.name}`;
-
+        
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'header';
+        
         const closeChatButton = document.createElement('button');
         closeChatButton.className = 'close-button';
         closeChatButton.innerText = 'Close';
         closeChatButton.addEventListener('click', () => {
             document.getElementById(`chat-popup-${file.name}`).style.display = 'none';
         });
-
+        
         const chatTitle = document.createElement('h4');
         chatTitle.innerText = 'Chat History';
-
+        
+        headerDiv.appendChild(chatTitle);
+        headerDiv.appendChild(closeChatButton);
+        
+        const chatContentDiv = document.createElement('div');
+        chatContentDiv.className = 'chat-content';
+        
         const chatHistory = document.createElement('ul');
         chatHistory.id = `chat-history-${file.name}`;
-
-        chatPopupDiv.appendChild(closeChatButton);
-        chatPopupDiv.appendChild(chatTitle);
-        chatPopupDiv.appendChild(chatHistory);
-
+        
+        chatContentDiv.appendChild(chatHistory);
+        
+        chatPopupDiv.appendChild(headerDiv);
+        chatPopupDiv.appendChild(chatContentDiv);
+        
         // Create the chat button
         const chatButton = document.createElement('button');
         chatButton.innerText = 'Chat History';
