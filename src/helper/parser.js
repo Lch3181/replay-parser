@@ -165,8 +165,8 @@ function mapPlayerData(playerRecords, slotRecords) {
     const colors = [
         { id: 0, name: 'Red', hex: 'FF0303', rgb: [255, 3, 3] },
         { id: 1, name: 'Blue', hex: '0042FF', rgb: [0, 66, 255] },
-        { id: 2, name: 'Teal', hex: '1CB619', rgb: [28, 230, 185] },
-        { id: 3, name: 'Purple', hex: '540081', rgb: [80, 0, 129] },
+        { id: 2, name: 'Teal', hex: '1CE6B9', rgb: [28, 230, 185] },
+        { id: 3, name: 'Purple', hex: 'A64DFF', rgb: [166, 77, 255] },
         { id: 4, name: 'Yellow', hex: 'FFFF01', rgb: [255, 255, 1] },
         { id: 5, name: 'Orange', hex: 'FE8A0E', rgb: [254, 138, 14] },
         { id: 6, name: 'Green', hex: '20C000', rgb: [32, 192, 0] },
@@ -174,7 +174,7 @@ function mapPlayerData(playerRecords, slotRecords) {
         { id: 8, name: 'Grey', hex: '959697', rgb: [149, 150, 151] },
         { id: 9, name: 'Light Blue', hex: '7EBFF1', rgb: [126, 191, 241] },
         { id: 10, name: 'Dark Green', hex: '106246', rgb: [16, 98, 70] },
-        { id: 11, name: 'Brown', hex: '4E2A04', rgb: [74, 42, 4] }
+        { id: 11, name: 'Brown', hex: '4E2A04', rgb: [78, 42, 4] }
     ];
 
     // Create a mapping of playerId to playerName
@@ -191,7 +191,7 @@ function mapPlayerData(playerRecords, slotRecords) {
             return {
                 playerId: slot.playerId,
                 playerName: playerMap[slot.playerId] || 'Unknown',
-                colorId: color ? color.name : 'Unknown',
+                colorId: color ? color.id : 'Unknown',
                 hex: color ? color.hex : 'Unknown',
                 rgb: color ? color.rgb : 'Unknown'
             };
