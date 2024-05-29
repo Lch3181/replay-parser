@@ -209,7 +209,7 @@ function getMessageType(code) {
         case 0x02:
             return "Observers";
         default:
-            return "Unknown";
+            return "Direct Message";
     }
 }
 
