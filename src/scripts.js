@@ -85,8 +85,26 @@ function createRow(filename) {
     });
 
     resultDiv.addEventListener('mousemove', (e) => {
-        hoverPanel.style.left = e.pageX + 15 + 'px';
-        hoverPanel.style.top = e.pageY + 15 + 'px';
+        const panelWidth = hoverPanel.offsetWidth;
+        const panelHeight = hoverPanel.offsetHeight;
+        const pageWidth = window.innerWidth;
+        const pageHeight = window.innerHeight;
+    
+        let leftPosition = e.pageX + 15;
+        let topPosition = e.pageY + 15;
+    
+        // Check if the hover panel would extend beyond the right edge
+        if (leftPosition + panelWidth > pageWidth) {
+            leftPosition = e.pageX - panelWidth - 15;
+        }
+    
+        // Check if the hover panel would extend beyond the bottom edge
+        if (topPosition + panelHeight > pageHeight) {
+            topPosition = e.pageY - panelHeight - 15;
+        }
+    
+        hoverPanel.style.left = leftPosition + 'px';
+        hoverPanel.style.top = topPosition + 'px';
     });
 
     return { resultDiv, body, hoverPanel }
