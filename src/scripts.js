@@ -7,29 +7,32 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     const chatPopups = document.getElementById('chat-container')
     resultsDiv.innerHTML = ''; // Clear previous results
 
-    Array.from(files).forEach(file => {
+    const uploadPromises = Array.from(files).map(file => {
         const row = createRow(file.name);
         const chatPopupDiv = createChatHistoryPopup(file.name);
-        
+
         resultsDiv.appendChild(row.resultDiv);
-        chatPopups.appendChild(chatPopupDiv)
+        chatPopups.appendChild(chatPopupDiv);
 
         const formData = new FormData();
         formData.append('file', file);
         formData.append('username', username);
 
-        fetch('/parse-w3g', {
+        return fetch('/parse-w3g', {
             method: 'POST',
             body: formData
         })
-            .then(response => response.json())
-            .then(data => {
-                fetchUpload(file.name, row, data);
-            })
-            .catch(error => {
-                row.body.innerText = 'Error: ' + error.message;
-            });
+        .then(response => response.json())
+        .then(data => {
+            fetchUpload(file.name, row, data);
+        })
+        .catch(error => {
+            row.body.innerText = 'Error: ' + error.message;
+        });
     });
+
+    // Wait for all upload promises to resolve
+    await Promise.allSettled(uploadPromises);
 });
 
 function createRow(filename) {
