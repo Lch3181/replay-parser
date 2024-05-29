@@ -8,91 +8,15 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     resultsDiv.innerHTML = ''; // Clear previous results
 
     Array.from(files).forEach(file => {
-        const resultDiv = document.createElement('div');
-        resultDiv.className = 'result-div';
-        resultDiv.id = `result-${file.name}`;
-
-        const title = document.createElement('h3');
-        title.innerText = file.name;
-
-        const body = document.createElement('p');
-        body.innerText = 'Loading...';
-
-        const hoverPanel = document.createElement('div');
-        hoverPanel.className = 'hover-panel';
-        hoverPanel.innerHTML = "Loading...";
-
-        // Create the chat popup
-        const chatPopupDiv = document.createElement('div');
-        chatPopupDiv.className = 'chat-popup';
-        chatPopupDiv.id = `chat-popup-${file.name}`;
+        const row = createRow(file.name);
+        const chatPopupDiv = createChatHistoryPopup(file.name);
         
-        const headerDiv = document.createElement('div');
-        headerDiv.className = 'header';
-        
-        const closeChatButton = document.createElement('button');
-        closeChatButton.className = 'close-button';
-        closeChatButton.innerText = 'Close';
-        closeChatButton.addEventListener('click', () => {
-            document.getElementById(`chat-popup-${file.name}`).style.display = 'none';
-        });
-        
-        const chatTitle = document.createElement('h4');
-        chatTitle.innerText = 'Chat History';
-        
-        headerDiv.appendChild(chatTitle);
-        headerDiv.appendChild(closeChatButton);
-        
-        const chatContentDiv = document.createElement('div');
-        chatContentDiv.className = 'chat-content';
-        
-        const chatHistory = document.createElement('ul');
-        chatHistory.id = `chat-history-${file.name}`;
-        
-        chatContentDiv.appendChild(chatHistory);
-        
-        chatPopupDiv.appendChild(headerDiv);
-        chatPopupDiv.appendChild(chatContentDiv);
-        
-        // Create the chat button
-        const chatButton = document.createElement('button');
-        chatButton.disabled = true
-        chatButton.id = `open-button-${file.name}`
-        chatButton.className = "open-button"
-        chatButton.innerText = 'Chat History';
-        chatButton.addEventListener('click', () => {
-            // Hide all chat-popups
-            const chatPopups = document.querySelectorAll('[id^="chat-popup-"]');
-            chatPopups.forEach(popup => {
-                popup.style.display = 'none';
-            });
-
-            document.getElementById(`chat-popup-${file.name}`).style.display = 'block';
-        });
-
-        resultDiv.appendChild(chatButton);
-        resultDiv.appendChild(title);
-        resultDiv.appendChild(body);
-        resultDiv.appendChild(hoverPanel);
-        resultsDiv.appendChild(resultDiv);
+        resultsDiv.appendChild(row.resultDiv);
         chatPopups.appendChild(chatPopupDiv)
 
         const formData = new FormData();
         formData.append('file', file);
         formData.append('username', username);
-
-        resultDiv.addEventListener('mouseenter', () => {
-            hoverPanel.style.display = 'block';
-        });
-
-        resultDiv.addEventListener('mouseleave', () => {
-            hoverPanel.style.display = 'none';
-        });
-
-        resultDiv.addEventListener('mousemove', (e) => {
-            hoverPanel.style.left = e.pageX + 15 + 'px';
-            hoverPanel.style.top = e.pageY + 15 + 'px';
-        });
 
         fetch('/parse-w3g', {
             method: 'POST',
@@ -100,33 +24,131 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         })
             .then(response => response.json())
             .then(data => {
-                const gameData = data.gameData;
-                const loots = data.loots;
-                const chat = data.chatData
-
-                const gameDataHtml = `
-                <strong>Game Information:</strong><br>
-                Version: ${gameData.version || 0}<br>
-                Length: ${gameData.length}<br>
-                Map: ${gameData.map}<br>
-                Host: ${gameData.host}<br>
-                Game Name: ${gameData.gameName}
-            `;
-                hoverPanel.innerHTML = gameDataHtml;
-
-                if (loots.length === 0) {
-                    body.innerText = 'No items found.';
-                } else {
-                    body.innerText = loots.join('\n');
-                }
-
-                fetchChatHistory(file.name, chat); // Function to fetch and display chat history
+                fetchUpload(file.name, row, data);
             })
             .catch(error => {
-                body.innerText = 'Error: ' + error.message;
+                row.body.innerText = 'Error: ' + error.message;
             });
     });
 });
+
+function createRow(filename) {
+    // div
+    const resultDiv = document.createElement('div');
+    resultDiv.className = 'result-div';
+    resultDiv.id = `result-${filename}`;
+
+    // title
+    const title = document.createElement('h3');
+    title.innerText = filename;
+
+    // body
+    const body = document.createElement('p');
+    body.innerText = 'Loading...';
+
+    // hover panel
+    const hoverPanel = document.createElement('div');
+    hoverPanel.className = 'hover-panel';
+    hoverPanel.innerHTML = "Loading...";
+
+    // button to open chat history
+    const chatButton = document.createElement('button');
+    chatButton.disabled = true
+    chatButton.id = `open-button-${filename}`
+    chatButton.className = "open-button"
+    chatButton.innerText = 'Chat History';
+    chatButton.addEventListener('click', () => {
+        // Hide all chat-popups
+        const chatPopups = document.querySelectorAll('[id^="chat-popup-"]');
+        chatPopups.forEach(popup => {
+            popup.style.display = 'none';
+        });
+
+        document.getElementById(`chat-popup-${filename}`).style.display = 'block';
+    });
+    
+    resultDiv.appendChild(chatButton);
+    resultDiv.appendChild(title);
+    resultDiv.appendChild(body);
+    resultDiv.appendChild(hoverPanel);
+
+    // hover panel events
+    resultDiv.addEventListener('mouseenter', () => {
+        hoverPanel.style.display = 'block';
+    });
+
+    resultDiv.addEventListener('mouseleave', () => {
+        hoverPanel.style.display = 'none';
+    });
+
+    resultDiv.addEventListener('mousemove', (e) => {
+        hoverPanel.style.left = e.pageX + 15 + 'px';
+        hoverPanel.style.top = e.pageY + 15 + 'px';
+    });
+
+    return { resultDiv, body, hoverPanel }
+}
+
+function createChatHistoryPopup(filename) {
+    // Create the chat popup
+    const chatPopupDiv = document.createElement('div');
+    chatPopupDiv.className = 'chat-popup';
+    chatPopupDiv.id = `chat-popup-${filename}`;
+    
+    const headerDiv = document.createElement('div');
+    headerDiv.className = 'header';
+    
+    const closeChatButton = document.createElement('button');
+    closeChatButton.className = 'close-button';
+    closeChatButton.innerText = 'Close';
+    closeChatButton.addEventListener('click', () => {
+        document.getElementById(`chat-popup-${filename}`).style.display = 'none';
+    });
+    
+    const chatTitle = document.createElement('h4');
+    chatTitle.innerText = 'Chat History';
+    
+    headerDiv.appendChild(chatTitle);
+    headerDiv.appendChild(closeChatButton);
+    
+    const chatContentDiv = document.createElement('div');
+    chatContentDiv.className = 'chat-content';
+    
+    const chatHistory = document.createElement('ul');
+    chatHistory.id = `chat-history-${filename}`;
+    
+    chatContentDiv.appendChild(chatHistory);
+    
+    chatPopupDiv.appendChild(headerDiv);
+    chatPopupDiv.appendChild(chatContentDiv);
+    
+    return chatPopupDiv
+}
+
+function fetchUpload(filename, row, data) {
+    const gameData = data.gameData;
+    const loots = data.loots;
+    const chat = data.chatData
+
+    const gameDataHtml = `
+    <strong>Game Information:</strong><br>
+    Version: ${gameData.version || 0}<br>
+    Length: ${gameData.length}<br>
+    Map: ${gameData.map}<br>
+    Host: ${gameData.host}<br>
+    Game Name: ${gameData.gameName}`;
+
+    row.hoverPanel.innerHTML = gameDataHtml;
+
+    if (loots.length === 0) {
+        row.body.innerText = 'No items found.';
+    } else {
+        row.body.innerText = loots.join('\n');
+    }
+
+    fetchChatHistory(filename, chat); // Function to fetch and display chat history
+
+}
 
 function fetchChatHistory(fileName, chatData) {
     const chatHistory = document.getElementById(`chat-history-${fileName}`);
