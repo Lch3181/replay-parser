@@ -30,7 +30,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     document.body.style.cursor = 'default';
 });
 
-function createRow(index, filename) {
+function createRow(index, filename, validMap) {
     const resultsDiv = document.getElementById('results');
 
     // div
@@ -43,6 +43,9 @@ function createRow(index, filename) {
     // title
     const title = document.createElement('h3');
     title.innerText = filename;
+    if (!validMap) {
+        title.style.color = 'red'
+    }
 
     // body
     const body = document.createElement('p');
@@ -159,10 +162,13 @@ function fetchUpload(index, filename, data, username) {
     Version: ${gameData.version || 0}<br>
     Length: ${gameData.length}<br>
     Map: ${gameData.map}<br>
+    MD5: ${gameData.md5}<br>
+    MD5SHA1: ${gameData.md5sha1}<br>
+    Valid Map: ${gameData.validMap}<br>
     Host: ${gameData.host}<br>
     Game Name: ${gameData.gameName}`;
 
-    const row = createRow(index, filename);
+    const row = createRow(index, filename, gameData.validMap);
     createChatHistoryPopup(filename);
 
     row.hoverPanel.innerHTML = gameDataHtml;
@@ -190,21 +196,6 @@ function fetchChatHistory(fileName, chatData) {
 
     const chatButton = document.getElementById(`open-button-${fileName}`)
     chatButton.disabled = false
-}
-
-// Function to get unique data based on id and newest timestamp
-function filterUniqueNewest(dataArray) {
-    const uniqueData = dataArray.reduce((acc, current) => {
-        const existing = acc.find(item => item.id === current.id);
-        if (!existing || new Date(current.timestamp) > new Date(existing.timestamp)) {
-            // If no existing object or current object is newer, replace/add it
-            acc = acc.filter(item => item.id !== current.id); // Remove existing
-            acc.push(current); // Add current
-        }
-        return acc;
-    }, []);
-
-    return uniqueData;
 }
 
 function closeChatPopup() {

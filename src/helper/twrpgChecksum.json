@@ -1,0 +1,1482 @@
+[
+    {
+        "name": "twrpgS4v0.01c.w3x",
+        "md5": "1684e597d65122c615809c5052b7c1b2",
+        "md5sha1": "efff1c5ad88709e77a6f451787e2307340196a44"
+    },
+    {
+        "name": "twrpgS4v0.24b.w3x",
+        "md5": "946bfc156a077732a3fa1c4824898308",
+        "md5sha1": "46a5bcdc09c8e8fcda0b2908a3d4738653f16428"
+    },
+    {
+        "name": "twrpgS4v0.24b3_eng.w3x",
+        "md5": "73eaeb835b422eae931b36c53364b37f",
+        "md5sha1": "75490069dd009d28b0c0315df9b5f9e1059e961a"
+    },
+    {
+        "name": "twrpgS4v0.24c_eng.w3x",
+        "md5": "bad7e3352ecc6da50fb79a2b96d77f91",
+        "md5sha1": "edf1665c95afdc22d4a980106d1e2fc3fa366bc0"
+    },
+    {
+        "name": "twrpgS4v0.24d_eng.w3x",
+        "md5": "204b7e5eab41724e51be846d9cf3ad93",
+        "md5sha1": "4330bf689857e2483bf571bed184d3acc52eaa93"
+    },
+    {
+        "name": "twrpgS4v0.24e_eng.w3x",
+        "md5": "f3943a52491e22fd3ef11468054713db",
+        "md5sha1": "9958b14c342463302d15ea9ce27fef8013e5939e"
+    },
+    {
+        "name": "twrpgS4v0.24f.w3x",
+        "md5": "eb97149a1eb62e56c2b37018b8ad9dda",
+        "md5sha1": "b09617730267331e46085a4ad2629e61627ed1d0"
+    },
+    {
+        "name": "twrpgS4v0.24f2.w3x",
+        "md5": "76443794fb55a4eefb4ccd5fb4dafd4f",
+        "md5sha1": "1e6da4edd8b342f9f5c6cbded6dcfe1548546ed4"
+    },
+    {
+        "name": "twrpgS4v0.24h_eng.w3x",
+        "md5": "5e033c8e0f291837b9696abb6c62ce8b",
+        "md5sha1": "4393bf875cc8c5dbd58bcc5a05fbfeda008bcfcb"
+    },
+    {
+        "name": "twrpgS4v0.25a.w3x",
+        "md5": "a4e7efc3387ea862617e094fb9a7b260",
+        "md5sha1": "20e33a59e5ecde13ad4b243ea16d9b57fd9795aa"
+    },
+    {
+        "name": "twrpgS4v0.25b.w3x",
+        "md5": "b1bd0698f024b2502a0b2ac306ce1baa",
+        "md5sha1": "9b1122870161d681e27166c2611c22da54fe82b1"
+    },
+    {
+        "name": "twrpgS4v0.25c.w3x",
+        "md5": "c80d3f71e8b42db682eac115e7e66420",
+        "md5sha1": "464609b980685a1efc3900146f4b61cfe0354d07"
+    },
+    {
+        "name": "twrpgS4v0.25c_eng.w3x",
+        "md5": "f91606dc8a573be0632a8f6768e1eadb",
+        "md5sha1": "df227cc46dd68e8069e4b31b50d8235b43e490d1"
+    },
+    {
+        "name": "twrpgS4v0.25d_eng.w3x",
+        "md5": "314393cccbe5fa842697599d96ee00f1",
+        "md5sha1": "2752127b3ec539150cc5e48ce14c643bbdae69df"
+    },
+    {
+        "name": "twrpgS4v0.25e_eng.w3x",
+        "md5": "9d717b7edd4cb7dbe765fb210d14f347",
+        "md5sha1": "3c89c2506a54657607ecaf46b4a21fdd3502a276"
+    },
+    {
+        "name": "twrpgS4v0.25f_eng.w3x",
+        "md5": "4dcf64f5c33678c7d8d0d26efeebe7c2",
+        "md5sha1": "2291832e3dd4ecd0c438fbbc40bfc8e74096d950"
+    },
+    {
+        "name": "twrpgS4v0.25h.w3x",
+        "md5": "07b1a05a114aa30acb16871f294d2cfd",
+        "md5sha1": "90442607ce5e08297e26df2545a388b371d305eb"
+    },
+    {
+        "name": "twrpgS4v0.25h_eng.w3x",
+        "md5": "8db01b5f4f062a4338da894812e7ddfb",
+        "md5sha1": "84bf2b07a690ce87e2751385d5c9d6f9aa16f155"
+    },
+    {
+        "name": "twrpgS4v0.26a.w3x",
+        "md5": "5661920ba00f30b818e8d98b55fd186f",
+        "md5sha1": "aba3ab372272ed34a34371cef799af08ee0cb791"
+    },
+    {
+        "name": "twrpgS4v0.26c.w3x",
+        "md5": "573fcf5c64c5923fb23d6c030f18a8cc",
+        "md5sha1": "4631c3e030b183431df852cf5098f620254a9eab"
+    },
+    {
+        "name": "twrpgS4v0.26d.w3x",
+        "md5": "f240badec56603b87e03d59baef7b063",
+        "md5sha1": "dabaa5fdda108fb4a60eec417d3e39046edac76d"
+    },
+    {
+        "name": "twrpgS4v0.26e.w3x",
+        "md5": "7c4d22637ff51511a75a6496fe618fae",
+        "md5sha1": "707271be7111b5689447d5d84b097a7ef16c92c9"
+    },
+    {
+        "name": "twrpgS4v0.26f.w3x",
+        "md5": "d2819ded1b104e9734056c1253243159",
+        "md5sha1": "3f3bbe1891ee35ba6a95e4f74487b9b39991f10c"
+    },
+    {
+        "name": "twrpgS4v0.26f_eng.w3x",
+        "md5": "e316060768287f1ce20a3e6bf6592ea7",
+        "md5sha1": "5b3b8dab0f2aa7fe99313c9161331e5c6da134b4"
+    },
+    {
+        "name": "twrpgS4v0.26h_eng.w3x",
+        "md5": "4828579b07d6fe4f56156f3aa2b9edf0",
+        "md5sha1": "d718c02a63ca118ab7ddc4c5ae2839cf16dd39f7"
+    },
+    {
+        "name": "twrpgS4v0.26m.w3x",
+        "md5": "c3075b095cda638a42273a52f0f4872b",
+        "md5sha1": "2832e16a27d78a66ef9d84ab0d6bdb31f4aad6cf"
+    },
+    {
+        "name": "twrpgS4v0.26p.w3x",
+        "md5": "844c5c4395317364103a4f64150fe3a0",
+        "md5sha1": "88a23e877bf6f1470275afed2c9150aeabbc6807"
+    },
+    {
+        "name": "twrpgS4v0.26p_eng.w3x",
+        "md5": "f102dc1c7beb6600132964916a83e4cc",
+        "md5sha1": "2dee14bf9ca10c97cd4275572dbcba608ace9d12"
+    },
+    {
+        "name": "twrpgS4v0.26u.w3x",
+        "md5": "23b9f08b056a9b8ef37b07471506f67e",
+        "md5sha1": "c3c43b495afd3c0cd32764c8af9d632d88827eb4"
+    },
+    {
+        "name": "twrpgS4v0.26w.w3x",
+        "md5": "4d0f3b9f75f785d5ebc45f17f477e29d",
+        "md5sha1": "4a3aa2b9f3eaeda76db9919a32eb1285c85a7a18"
+    },
+    {
+        "name": "twrpgS4v0.26w_eng.w3x",
+        "md5": "8d687132da4699a0efa3867a4bd392e6",
+        "md5sha1": "4019c10fa6cb3274bae813a2db6ae58bc0a1003a"
+    },
+    {
+        "name": "twrpgS4v0.27a_eng.w3x",
+        "md5": "29193404f905f79fbad32f3943142cb0",
+        "md5sha1": "8e80cd61f9978691635f11b029d9d8102450edaa"
+    },
+    {
+        "name": "twrpgS4v0.27b_eng.w3x",
+        "md5": "da9b1be0bf2e6c2d2488b4ad9e49944c",
+        "md5sha1": "6cbe1f9b78013a55664e38219975d872282af7a3"
+    },
+    {
+        "name": "twrpgS4v0.27c_eng.w3x",
+        "md5": "a73da6fbb9d9d10085ef755f938c3ace",
+        "md5sha1": "82afa1cf2ebf8bcdae4e27b3ea31bef51072ed54"
+    },
+    {
+        "name": "twrpgS4v0.27d_eng.w3x",
+        "md5": "ba1bcccafd6c10eb58c926ba47756099",
+        "md5sha1": "1785c4f859b732c4a016d81575e65ed0a60fe2f8"
+    },
+    {
+        "name": "twrpgS4v0.29a.w3x",
+        "md5": "3be2c03e2ae4f0dce562d0949d3c42f7",
+        "md5sha1": "e56f6903a687f9ec2a0bdd4489792e7e4e221631"
+    },
+    {
+        "name": "twrpgS4v0.29a_eng.w3x",
+        "md5": "c2836b74a53897b497b69e265d6285d0",
+        "md5sha1": "3d6687b635ccac8e9731ae5c25940f2728144917"
+    },
+    {
+        "name": "twrpgS4v0.29b.w3x",
+        "md5": "6c70990098bff13485693d13a4cdc937",
+        "md5sha1": "ce33171c5f918bee62dbac28e2ed609512aaabc8"
+    },
+    {
+        "name": "twrpgS4v0.29b_eng.w3x",
+        "md5": "4312c9379d38e17420624b3d20f379e0",
+        "md5sha1": "cf7716f7fe122cf4f22fdac4c8bdc20f89cb9bbe"
+    },
+    {
+        "name": "twrpgS4v0.29c_eng.w3x",
+        "md5": "b9d24cda7b0714eb366d10ff67732f4d",
+        "md5sha1": "f0b4606da9cd0d549d50def8cd8d67c83dd39e56"
+    },
+    {
+        "name": "twrpgS4v0.29e_eng.w3x",
+        "md5": "89ab071c2722a62090e7faa5468e9441",
+        "md5sha1": "615399b03a32b77eaabf09c4ad3fd4be90724725"
+    },
+    {
+        "name": "twrpgS4v0.29f_eng.w3x",
+        "md5": "4da609c576789614626f53c5ea6ceac0",
+        "md5sha1": "ae17273e30e23cb998b72b804cdc27d4e82863d3"
+    },
+    {
+        "name": "twrpgS4v0.29k_eng.w3x",
+        "md5": "7bde8d507007915ea7a46564eb7bce72",
+        "md5sha1": "a1bcc125d9a7dd5810d6eb8a96f83579edf17200"
+    },
+    {
+        "name": "twrpgS4v0.29o_eng.w3x",
+        "md5": "25b50ed087a46f73a33743bcc25306b2",
+        "md5sha1": "b8d2a7dbf7fa116b8d7cdd2b5830d1c8b92ec676"
+    },
+    {
+        "name": "twrpgS4v0.29p_eng.w3x",
+        "md5": "1514c096304e4fd29068913d098e4c1e",
+        "md5sha1": "22e5aec89e5abf23fdfc2fa8c5faa3c3a5b7cc2c"
+    },
+    {
+        "name": "twrpgS4v0.29r_eng.w3x",
+        "md5": "69abd5c7b4f3ab740a92f4d4471e28a6",
+        "md5sha1": "c079c9ba5c3331ecb8c300867593aa6ef82f0f1d"
+    },
+    {
+        "name": "twrpgS4v0.29s_eng.w3x",
+        "md5": "752fd66cb5a1b34f6fbc947b923bce7d",
+        "md5sha1": "915e20843036054037b9edebfddea28187dc714e"
+    },
+    {
+        "name": "twrpgS4v0.29t_eng.w3x",
+        "md5": "68a129ade44cb4308b8e4a5d1614563d",
+        "md5sha1": "dfe951778b95abcfcd475c33886f517425233a0c"
+    },
+    {
+        "name": "twrpgS4v0.30c_eng.w3x",
+        "md5": "98723c0be165a0e5f480866556e4e832",
+        "md5sha1": "5c20d2ef190b0f041dff1139b55184491425360d"
+    },
+    {
+        "name": "twrpgS4v0.30d_eng.w3x",
+        "md5": "06d89bc05be154015fc664b22a7e13e7",
+        "md5sha1": "dbfa2b5401dd67a5a56460ddc6bb2ea915e4f953"
+    },
+    {
+        "name": "twrpgS4v0.30e_eng.w3x",
+        "md5": "f243e588450ff723a6a06e2ca22f77c8",
+        "md5sha1": "936bf0588d0230196647faa6a990e249eb241926"
+    },
+    {
+        "name": "twrpgS4v0.30f_eng.w3x",
+        "md5": "a443dadae217c20d4973af637eb7aa10",
+        "md5sha1": "22cdf267dfde0a5e1ce2811d34c4f1775e2bf11c"
+    },
+    {
+        "name": "twrpgS4v0.31a_eng.w3x",
+        "md5": "086273140951bd99cc0ecf5540d340d1",
+        "md5sha1": "da0c86850f3112c50ebe9c58a219b956129c64fe"
+    },
+    {
+        "name": "twrpgS4v0.31b.w3x",
+        "md5": "2d398c44a55471963823cbccf51e163a",
+        "md5sha1": "68815e77a4f450b8985e7b2a8b128eae9b96a556"
+    },
+    {
+        "name": "twrpgS4v0.31c.w3x",
+        "md5": "83c38c1aa74d05449e8d19446cbfa664",
+        "md5sha1": "2b6bb0ed2f5442026ae39362630acda2bfeaed56"
+    },
+    {
+        "name": "twrpgS4v0.31e.w3x",
+        "md5": "206d4bc7e060a15710416bef39c0f264",
+        "md5sha1": "a128327e580bb93249538f9518bb048f9b41abbf"
+    },
+    {
+        "name": "twrpgS4v0.31e_eng.w3x",
+        "md5": "3b4a7377f8063638070780388cd59a09",
+        "md5sha1": "7843871c18a0d69e62fa9aa812f289f9e9460e4e"
+    },
+    {
+        "name": "twrpgS4v0.32a_eng.w3x",
+        "md5": "bd0e59f532f4b780a44dcf560dd6da8f",
+        "md5sha1": "e1c18c2a85d777957bdf6631001fafc468cc16a8"
+    },
+    {
+        "name": "twrpgS4v0.32b_eng.w3x",
+        "md5": "5735b2608a7f82a87b58b45733a0401a",
+        "md5sha1": "b0e491ac8be41560153b0c371bf23364a75e82bf"
+    },
+    {
+        "name": "twrpgS4v0.32c_eng.w3x",
+        "md5": "09c29e39f537230051344ec7ccc8def7",
+        "md5sha1": "e32047431a5f54f6745ecf17b92f09123a6afba7"
+    },
+    {
+        "name": "twrpgS4v0.32d.w3x",
+        "md5": "96f3b7ddd65994f27f48b3c50343b0c1",
+        "md5sha1": "47045784ddac4853fefa2df4fb9d336cab289663"
+    },
+    {
+        "name": "twrpgS4v0.32e.w3x",
+        "md5": "b48b425c13910475318a9ffc1d672db1",
+        "md5sha1": "97183fb9197e582c3fe8466f0a326720a72124f4"
+    },
+    {
+        "name": "twrpgS4v0.32g.w3x",
+        "md5": "9cce0136ab9a113416640e91d29e141d",
+        "md5sha1": "41526c6eef082941410f3e74cdd0caea65b29ef8"
+    },
+    {
+        "name": "twrpgS4v0.32g_eng.w3x",
+        "md5": "eb6f62c453bd8557a0889538e10705fd",
+        "md5sha1": "8ba54255b4eee5659743408746e7e14dc14e8bc5"
+    },
+    {
+        "name": "twrpgS4v0.32m.w3x",
+        "md5": "f47ff27c60bbf45ae03f770a4f8021a9",
+        "md5sha1": "c84b9902db66d17e0a0ead8a798353187eaf13ad"
+    },
+    {
+        "name": "twrpgv0.32p_eng.w3x",
+        "md5": "018303bfb05fbcaf05191f28da050f19",
+        "md5sha1": "cf2c6f2d1ef06193bdd3694bc9557b7ef6c5a080"
+    },
+    {
+        "name": "twrpgv0.32w_eng.w3x",
+        "md5": "4d2fef10a96602ee66068224583bd055",
+        "md5sha1": "e94cb327c561e7096245ecdadf91e6d72ac56635"
+    },
+    {
+        "name": "twrpgv0.32x_eng.w3x",
+        "md5": "be52285261393f78dba839e844a7cc4c",
+        "md5sha1": "7c036ab5289c8b57648a4a46d854c8629a53c636"
+    },
+    {
+        "name": "twrpgv0.32z_eng.w3x",
+        "md5": "2fb2be6851d90a49c870350020e9a1fc",
+        "md5sha1": "9fbd66bf6ec77b811b0d9f5904da64ba0aaaa58e"
+    },
+    {
+        "name": "twrpgv0.33a_eng.w3x",
+        "md5": "a454e52325581154c5d564f2db0b46ec",
+        "md5sha1": "097d6ada4b476ae6ebf8dbc2d44151cc3e1a6e65"
+    },
+    {
+        "name": "twrpgv0.33b_eng.w3x",
+        "md5": "f93c5546e74f4f284cd8e1d7541c979b",
+        "md5sha1": "6461425d37c459a4bb0ce5c801a72b4dd0f7bf39"
+    },
+    {
+        "name": "twrpgv0.33c_eng.w3x",
+        "md5": "a89bdfd5e3734895e1dc59213a817c07",
+        "md5sha1": "8813578d4b807d1731030324713268845ff0ce83"
+    },
+    {
+        "name": "twrpgv0.33d_eng.w3x",
+        "md5": "226153b1d4c2161afb43c0c23e27735c",
+        "md5sha1": "5a2d9a6e6fdc91f5a9d6650ab0e2c2c04792b157"
+    },
+    {
+        "name": "twrpgv0.34a.w3x",
+        "md5": "d382c0ae1f75b55bb4994dc9ff41bc00",
+        "md5sha1": "172fd765d04aa35d41a2a2212d01e6020aeb955e"
+    },
+    {
+        "name": "twrpgv0.34a_eng.w3x",
+        "md5": "4cfac681d8920ff6ab29c7b6afd031bd",
+        "md5sha1": "117fb63194a6457d5fe1d5e1e82b73e7e4dbf95c"
+    },
+    {
+        "name": "twrpgv0.34a_engx.w3x",
+        "md5": "13b11d75c894cc92ae72a5ea6caf7733",
+        "md5sha1": "3b8b2229b99f6d53604dc9de71714ff8a07c8639"
+    },
+    {
+        "name": "twrpgv0.34c.w3x",
+        "md5": "8c608d21be70575342ba82cf2acff6d6",
+        "md5sha1": "31bd805ba90325ded0d728b9592798a9a91f2f75"
+    },
+    {
+        "name": "twrpgv0.34d_eng.w3x",
+        "md5": "deab536655aa1e2989da991e3e28bdb7",
+        "md5sha1": "fc44309c27ada7daf19d5d47b1634f6f685e6016"
+    },
+    {
+        "name": "twrpgv0.34e_eng.w3x",
+        "md5": "9ceef7d040df2126be7b79a7f2443a10",
+        "md5sha1": "79fb7cd1d00cfce8c7b5d0713c907d779c5fbe88"
+    },
+    {
+        "name": "twrpgv0.34f_eng.w3x",
+        "md5": "93bc857f16040361869f2cfc7efee115",
+        "md5sha1": "a44ea8586085ee5417df79c67c287971dd035ba8"
+    },
+    {
+        "name": "twrpgv0.34g_eng.w3x",
+        "md5": "ccb8b92bf6de8d34b080d88aec9a3851",
+        "md5sha1": "70ba0ae4ef67604e0753a2f0c04b0f5d321e53e6"
+    },
+    {
+        "name": "twrpgv0.34n.w3x",
+        "md5": "ad7b8beff012c66737c54ff0e5843580",
+        "md5sha1": "b3cf63aacd4bc8773ef07b0e72c9a6caa7bcf40a"
+    },
+    {
+        "name": "twrpgv0.34o.w3x",
+        "md5": "3307f11858a2ceb7c345e5ddd3fa5c6e",
+        "md5sha1": "7a2014d09cc2e597965108c262e6aef94f7355b5"
+    },
+    {
+        "name": "twrpgv0.34o_eng.w3x",
+        "md5": "953783686d421f6484359ea3d2c3afcc",
+        "md5sha1": "cc31595063a0978b44547f3357e21a3764c44bf6"
+    },
+    {
+        "name": "twrpgv0.35a.w3x",
+        "md5": "2a8aa2d25a9a9cf1be1caf3874dde826",
+        "md5sha1": "0becaeccd14835471e69ef30a036b4f1cbfa8b7e"
+    },
+    {
+        "name": "twrpgv0.35c.w3x",
+        "md5": "176043a7bd32fcb49a3f5037ce295d6d",
+        "md5sha1": "6d4a966258d00fe402e79468474c0372f7e7326a"
+    },
+    {
+        "name": "twrpgv0.35c_eng.w3x",
+        "md5": "7b75389e0f36fd29478349c3d7a6e515",
+        "md5sha1": "066021e52625c1d19cd84743007199c3faca0ee5"
+    },
+    {
+        "name": "twrpgv0.35f.w3x",
+        "md5": "6093f67da0c05772b1b751b9a2c7c0e8",
+        "md5sha1": "8ebe066a8a10228867908b4b544efb4a639c061d"
+    },
+    {
+        "name": "twrpgv0.35g.w3x",
+        "md5": "59494f592e030b18d0872a55188a2b87",
+        "md5sha1": "898d255a7c3f769facd0593a6cdbac26dbc5f27b"
+    },
+    {
+        "name": "twrpgv0.35h_eng.w3x",
+        "md5": "145a338afba4e95e28a05d33f03560e2",
+        "md5sha1": "741de94b92960c8681bdf0a9c07add80674fb40f"
+    },
+    {
+        "name": "twrpgv0.36b_eng.w3x",
+        "md5": "58e5297f4a0ceb1d961373c3ef599ce2",
+        "md5sha1": "5139d5f1160c285f7f61bf01bc62d7a61a419c67"
+    },
+    {
+        "name": "twrpgv0.36c_eng.w3x",
+        "md5": "6f315191583c55d7e22d8a419ed1c509",
+        "md5sha1": "fb6c1c24e451dff2ad6f9a4fe250ef570b65dcf8"
+    },
+    {
+        "name": "twrpgv0.36d_eng.w3x",
+        "md5": "be6b7299755d562a11c2d63ce4f8f468",
+        "md5sha1": "a1d09403a3a4ea7b2c161d7e5014fc61b38fcced"
+    },
+    {
+        "name": "twrpgv0.36e_eng.w3x",
+        "md5": "745829ec2bde00949faa48361a1e4da5",
+        "md5sha1": "283cc2f0b38d11afc507f28372baee556f6dd341"
+    },
+    {
+        "name": "twrpgv0.36f_eng.w3x",
+        "md5": "979ec7385e67b21b7262f64964b8b41e",
+        "md5sha1": "1d4b3581ae83e4dbc2ca52d06dd62ea04e0dfd45"
+    },
+    {
+        "name": "twrpgv0.36g.w3x",
+        "md5": "35cb9958b1ada20fcd71db5a7f194757",
+        "md5sha1": "c2b060a88350baa6bd71a6708dce97f0a38f3102"
+    },
+    {
+        "name": "twrpgv0.36h.w3x",
+        "md5": "9be9d34805551c72361279a9f628bc4e",
+        "md5sha1": "10e5f2ee4dac195476a88a08da3781345fea16f7"
+    },
+    {
+        "name": "twrpgv0.36k.w3x",
+        "md5": "a3f877add79638a1bf304ddd20de3775",
+        "md5sha1": "abe8440073537378978575b1d9ac7ccbe80ea0c3"
+    },
+    {
+        "name": "twrpgv0.37b.w3x",
+        "md5": "7dab000c9f89bc969b329e5922f9952e",
+        "md5sha1": "a580ae2fc3d296e21e845400d61e497b6d1763ee"
+    },
+    {
+        "name": "twrpgv0.37c_eng.w3x",
+        "md5": "6e32e27cbb23b8ecb3fe419d086bb054",
+        "md5sha1": "16366f34965a9ab6717bf30e142ec4b33608eaf8"
+    },
+    {
+        "name": "twrpgv0.37d_eng.w3x",
+        "md5": "6025a5dc3d537234ae4aa5612d048413",
+        "md5sha1": "2b70afc2e9b8e8c0a3ecc8a73ca09576ed73e970"
+    },
+    {
+        "name": "twrpgv0.37e_eng.w3x",
+        "md5": "607876728b1f19b10eaf5759bd3075f6",
+        "md5sha1": "edd33eb3e13836830f91329e0f67fdac7d6ba388"
+    },
+    {
+        "name": "twrpgv0.38a.w3x",
+        "md5": "3de101b1e93985938d500f716eb634ea",
+        "md5sha1": "3f1dca495f80669b015ebe5b64caf7a6e674f0d6"
+    },
+    {
+        "name": "twrpgv0.38b.w3x",
+        "md5": "44e58cb3cd6c2395b4347c89e44b0e5d",
+        "md5sha1": "91c0153b4076f5abfaba088f49d0ede42f293d38"
+    },
+    {
+        "name": "twrpgv0.38d.w3x",
+        "md5": "6219abffb034c44042023952bccdefb3",
+        "md5sha1": "d549904735104de3b8b8bef618b8ca115a24a6f1"
+    },
+    {
+        "name": "twrpgv0.38e.w3x",
+        "md5": "3d160376f9893a7a156678b64d1bdfb6",
+        "md5sha1": "6f669d4b0477f7b85684c0b62b43de4a79ad6888"
+    },
+    {
+        "name": "twrpgv0.38e_eng.w3x",
+        "md5": "ee0a377a67aad5d4d851762d37ba791f",
+        "md5sha1": "4a8461e80e12520214a400d5a6b89692b5d8b22d"
+    },
+    {
+        "name": "twrpgv0.38g.w3x",
+        "md5": "d801fffede158fa31077934a4aedc544",
+        "md5sha1": "857099ded28a2039eeb3a1bce957f33d8571c917"
+    },
+    {
+        "name": "twrpgv0.38k.w3x",
+        "md5": "8d50e8d803d425c4a14524a6e6821e43",
+        "md5sha1": "15fb0a3dcb81cc69c2907f90b75504520ad37be2"
+    },
+    {
+        "name": "twrpgv0.38k_eng.w3x",
+        "md5": "0557959b7972c477892638b493d5d27f",
+        "md5sha1": "c7bb3124a5b6e94b6e7831a1b1357790ec802f86"
+    },
+    {
+        "name": "twrpgv0.38q.w3x",
+        "md5": "29123bf79aea46e06c0761047895ce95",
+        "md5sha1": "740c30fbcc298d7c5f99823e34d7c7e2680fbffe"
+    },
+    {
+        "name": "twrpgv0.38t.w3x",
+        "md5": "b1a3851c29971949d1d160c33e29288a",
+        "md5sha1": "3463de386b42eb4ee68bd9f313ceda30c0ad2d8f"
+    },
+    {
+        "name": "twrpgv0.38x.w3x",
+        "md5": "06c32d03da6caf401d01e89ff75b3948",
+        "md5sha1": "89760e44902c1c75bebb13b8310a0479e8069ccf"
+    },
+    {
+        "name": "twrpgv0.38x_eng.w3x",
+        "md5": "6b13daf76cced9bebc9da4a0bd71f6e3",
+        "md5sha1": "c7f7ed7b2c8af0ac104d094ce94175c72f3a5bcf"
+    },
+    {
+        "name": "twrpgv0.39a.w3x",
+        "md5": "c365ea139652ae225609dc0802e179c1",
+        "md5sha1": "cd6b1e2d88baa9c3cbe9672553498d839cf4436f"
+    },
+    {
+        "name": "twrpgv0.39b.w3x",
+        "md5": "249fbb68888a221aa4a2d78fe231d2d1",
+        "md5sha1": "7e62d2f1bcdc4f2199d7e88432e554c20220a072"
+    },
+    {
+        "name": "twrpgv0.40a.w3x",
+        "md5": "cdcca47e97da0c38dcb5da2007fe0b89",
+        "md5sha1": "bea3f2f24646b98ff44ce751806bc35a9cf72ce4"
+    },
+    {
+        "name": "twrpgv0.40a_eng.w3x",
+        "md5": "db30cabe0dae680fe3c43a8fc4721cf6",
+        "md5sha1": "663cddb9105cc623e5c1a6b87333c93db4b8e512"
+    },
+    {
+        "name": "twrpgv0.40b_eng.w3x",
+        "md5": "43776edb21cd8f4f965bc68b4e2b3ada",
+        "md5sha1": "0c6061b7d846138dea85216adb25bd6c41410b64"
+    },
+    {
+        "name": "twrpgv0.40e_eng.w3x",
+        "md5": "7b962229c04d2609f82198e070bbb588",
+        "md5sha1": "c5170ec6f840bf6b120f9697484f34140a8662a2"
+    },
+    {
+        "name": "twrpgv0.41a_eng.w3x",
+        "md5": "2ef2c9390319f5beb4eb52276eac1e67",
+        "md5sha1": "00c60014074d12500bfc91938c8909f11510e8b0"
+    },
+    {
+        "name": "twrpgv0.41b.w3x",
+        "md5": "3ff8d2c6b2e1466c1744efc0e6ca83e6",
+        "md5sha1": "1948f4b043a89599ec716457e2682a54d07d539c"
+    },
+    {
+        "name": "twrpgv0.41c_eng.w3x",
+        "md5": "d3edede93f2611fbfbdadb66f687c9c4",
+        "md5sha1": "b80cdfdd7fb460e1126ecd733c342f65a66afb04"
+    },
+    {
+        "name": "twrpgv0.41d_eng.w3x",
+        "md5": "72f5632d3ffaadead2015b6117e1935e",
+        "md5sha1": "5a5c55c02b4fcc084ba148fd07e1678ddf7ffcd0"
+    },
+    {
+        "name": "twrpgv0.42b_eng.w3x",
+        "md5": "fb35c025ce5f9155c37f0bc8601738ca",
+        "md5sha1": "2937cb4dfadd104e4b40971ac2cfc8a2636471b7"
+    },
+    {
+        "name": "twrpgv0.42c_eng.w3x",
+        "md5": "c7e4bf4cb3673271d08c302a01d4d9ce",
+        "md5sha1": "56e1d3e1494a0b519682698ddc18710fcc9f1540"
+    },
+    {
+        "name": "twrpgv0.42d_eng.w3x",
+        "md5": "0a01f3f7ef23861e166c71a6e3b95f11",
+        "md5sha1": "5115f0af51a44ceef276674ca7cd1721366f231a"
+    },
+    {
+        "name": "twrpgv0.43c_eng.w3x",
+        "md5": "b50426b1b2baabdd56796862b05ebdc4",
+        "md5sha1": "fdf44c8bc1b9a0cd57023e04fa454aee2b5f7995"
+    },
+    {
+        "name": "twrpgv0.43f_eng.w3x",
+        "md5": "0236fabb09680a5354c1a41f283f5728",
+        "md5sha1": "2688d03ad895f206d203544a5cb8b1cbe2e9fd72"
+    },
+    {
+        "name": "twrpgv0.43g_eng.w3x",
+        "md5": "06a8db2172a6f14a7065195f76c11f45",
+        "md5sha1": "3e90e0fc9adf8bb2aa013ebf2a132557cbec73da"
+    },
+    {
+        "name": "twrpgv0.43h_eng.w3x",
+        "md5": "48e377b5ce9ca3bf57d4531324ce9faf",
+        "md5sha1": "4a0c6ff37e7c804b28d0e7abaa68cc00f9aa9d00"
+    },
+    {
+        "name": "twrpgv0.43k.w3x",
+        "md5": "aea9ef9c374feba20ab0817bc5745b5a",
+        "md5sha1": "c9e15d6b594b73389a7eb1250206e0f60b15041a"
+    },
+    {
+        "name": "twrpgv0.44b.w3x",
+        "md5": "f769a8d2dfb54930d9b34fe9c6f8f646",
+        "md5sha1": "c23749c4b0a05861a054a89a266cb68ce4d77896"
+    },
+    {
+        "name": "twrpgv0.44b_eng.w3x",
+        "md5": "6a4da9e45e555323897ab786515fc15b",
+        "md5sha1": "99de071d90c271904f21f652d840722965ec60b6"
+    },
+    {
+        "name": "twrpgv0.44c_eng.w3x",
+        "md5": "aeaa49265c00e8e8d95b039a9e8f83b9",
+        "md5sha1": "b51a68d54ea3cbf48bd6e2bc6d70f33726350599"
+    },
+    {
+        "name": "twrpgv0.44h_eng.w3x",
+        "md5": "06802da2c4149cd69ca180170906418e",
+        "md5sha1": "0acc9446317257df77be715121f4e22b8e0f415e"
+    },
+    {
+        "name": "twrpgv0.44k_eng.w3x",
+        "md5": "bdd47c89b0ed89e88a3f4141308b35c9",
+        "md5sha1": "b12e9c309ee5ff86c3fc8fc7576e171a5a803de1"
+    },
+    {
+        "name": "twrpgv0.44m_eng.w3x",
+        "md5": "5134c1c14683390a717303bdf4d2e82a",
+        "md5sha1": "bfe4c3816f5329d027b32c96ae35011fac9e6f66"
+    },
+    {
+        "name": "twrpgv0.45a_eng.w3x",
+        "md5": "de82a52bcd114ef630a6743cac4ef068",
+        "md5sha1": "d10071e35e808f876cf758080c807c6164771cac"
+    },
+    {
+        "name": "twrpgv0.45b_eng.w3x",
+        "md5": "4957d82590d715153d1e2c7201ad0b48",
+        "md5sha1": "ab6016863606513910b37c488b69b035a20c2d8d"
+    },
+    {
+        "name": "twrpgv0.45c_eng.w3x",
+        "md5": "0486f0f4ccea70b8fdd1be209c6a052d",
+        "md5sha1": "7b5df409613a1e91df5252a755a5ab52eca03283"
+    },
+    {
+        "name": "twrpgv0.46a_eng.w3x",
+        "md5": "0834663cf6dca490615f0a9dee4f9e25",
+        "md5sha1": "3002cd71f90673323907f7334a637358488802d5"
+    },
+    {
+        "name": "twrpgv0.46b_eng.w3x",
+        "md5": "a8b031a5968eb93f7b924e35a84a4ee5",
+        "md5sha1": "af8b8c48d229603cb03ca00b27c15801c0b1b0b4"
+    },
+    {
+        "name": "twrpgv0.46c_eng.w3x",
+        "md5": "2bde83a740ff4841f00cd058174bb1c2",
+        "md5sha1": "08d59f908698c0345423f69c24849245f58ab0ba"
+    },
+    {
+        "name": "twrpgv0.46d_eng.w3x",
+        "md5": "44b091131b28bb088f1d9ab0cc2faa5f",
+        "md5sha1": "0d6859fbf24c1b44f040ba3c1688f5a856fb0f1b"
+    },
+    {
+        "name": "twrpgv0.47a_eng.w3x",
+        "md5": "8b2f48f7d33f712da7bb89fc7f3a4e3c",
+        "md5sha1": "cc6fab418cc4496c8f6bf400f4e2c28d88f3649f"
+    },
+    {
+        "name": "twrpgv0.50a.w3x",
+        "md5": "89bfec048e356494f9a8e0d6f01fbb49",
+        "md5sha1": "ad2a643f8d6c69a38f141de14ca24f95c6acd01a"
+    },
+    {
+        "name": "twrpgv0.50d2.w3x",
+        "md5": "dd56c8df6ce133c3869584df72e37951",
+        "md5sha1": "2f4e2c9cbb9733827e7cee4e316824f55a03be97"
+    },
+    {
+        "name": "twrpgv0.50e2.w3x",
+        "md5": "de1e699bc2979cbb832516a5ff1b236b",
+        "md5sha1": "9111ab339d956ba325238e7f26389bd972acd6f2"
+    },
+    {
+        "name": "twrpgv0.50f.w3x",
+        "md5": "806649031619fbdad2cc4615e90b2a90",
+        "md5sha1": "5debd2e411b905764a689a3aa80467985bcc23c7"
+    },
+    {
+        "name": "twrpgv0.50f_eng.w3x",
+        "md5": "e27d4b0c55c9d8172d4249af5e0b7900",
+        "md5sha1": "7551e82bbafc26d186355b25f43d9858e3b60ada"
+    },
+    {
+        "name": "twrpgv0.50k_eng.w3x",
+        "md5": "61de06011b0072939fef4b8b959ef862",
+        "md5sha1": "16e23eb19fbd7a04487d7a98e4951d9fb3ec67cb"
+    },
+    {
+        "name": "twrpgv0.50n_eng.w3x",
+        "md5": "1f240335caba571114451a99fa27b800",
+        "md5sha1": "fe833f35485a6bee74d201697125487e225e6002"
+    },
+    {
+        "name": "twrpgv0.50p_eng.w3x",
+        "md5": "ea3f936bfeb03a75de96ba9a990c8b0a",
+        "md5sha1": "78b8157740edc2930ce46cfda48b80b2ff1c8e1d"
+    },
+    {
+        "name": "twrpgv0.50q_eng.w3x",
+        "md5": "9fb46b26ac75249d405a8082a7664659",
+        "md5sha1": "55c12c92961094e3141324ffeaff2da6e2efe9a0"
+    },
+    {
+        "name": "twrpgv0.50r.w3x",
+        "md5": "916da5b9c4734bb6455f029b5275571e",
+        "md5sha1": "03c8839993a96463a7220a2c8e4337973082acb9"
+    },
+    {
+        "name": "twrpgv0.50r_eng.w3x",
+        "md5": "2699cd584f993c42abe70d1a31654327",
+        "md5sha1": "e5a1e10ac4f3f5271e8a21e00a2b7922b52de6c4"
+    },
+    {
+        "name": "twrpgv0.50u_eng.w3x",
+        "md5": "78aa4fa288559b06f134a444d13be0fa",
+        "md5sha1": "e7d5d48fd928dbf757c30989cadc6bf58d8d9119"
+    },
+    {
+        "name": "twrpgv0.50x.w3x",
+        "md5": "7bb78e5089f5ba85335f99f8663effe2",
+        "md5sha1": "1ba70afc1f75c78bf9ac5be465784b0959f7cc66"
+    },
+    {
+        "name": "twrpgv0.50z.w3x",
+        "md5": "98d80ba684d47964ffb5f4b4972cf5dd",
+        "md5sha1": "f027b4ea1f702b2412bea806e1b16f6ce7b57f05"
+    },
+    {
+        "name": "twrpgv0.50z_eng.w3x",
+        "md5": "2641fbe3a6e5799011ad02fe55a79a30",
+        "md5sha1": "f85abb00caccbcb5e1dd01fb4e2cc14c4411b0c2"
+    },
+    {
+        "name": "twrpgv0.51a.w3x",
+        "md5": "773c7680af04caefc6f1d9be8775b1fa",
+        "md5sha1": "306a7b592da73760300b428795b157f4d07e5ea9"
+    },
+    {
+        "name": "twrpgv0.51b_eng.w3x",
+        "md5": "6442cf7430d641f705ca8aec9624bfe0",
+        "md5sha1": "cc66758500cac64517afb1bb4fdd3ea9e8520156"
+    },
+    {
+        "name": "twrpgv0.52a.w3x",
+        "md5": "ff54e60f877d706ca10368f7ad74f453",
+        "md5sha1": "e2ab7902d85a49514f29ce1ec39342408621fba7"
+    },
+    {
+        "name": "twrpgv0.52b_eng.w3x",
+        "md5": "eb462263b3cb3db0a0fbeab4926c87d6",
+        "md5sha1": "4f9781159ccb74b2339f7ac568f11c559e1686b9"
+    },
+    {
+        "name": "twrpgv0.52c_eng.w3x",
+        "md5": "ab29fc3b627e3a2dc2bbe7cb3b28cc95",
+        "md5sha1": "1c2520fe14d72bad618b8875108acd596f866237"
+    },
+    {
+        "name": "twrpgv0.52d.w3x",
+        "md5": "966fcf7fa0b8976f5d403e3ed2a30101",
+        "md5sha1": "8a89e4815e403ac608983417a26c5b3fa2a11fe2"
+    },
+    {
+        "name": "twrpgv0.52d_eng.w3x",
+        "md5": "e942a9aa00ae387a58207147817998b6",
+        "md5sha1": "a5d7c264366a3e709e67d187295fb2bc3b42ff54"
+    },
+    {
+        "name": "twrpgv0.53a.w3x",
+        "md5": "662a490a8b1fe8e35dda8bd1392c4033",
+        "md5sha1": "5571351a8f8252e9ec61c7bd82b6d32415fe0ebb"
+    },
+    {
+        "name": "twrpgv0.53a_eng.w3x",
+        "md5": "b518377dabee993edcdbf4c576b64431",
+        "md5sha1": "e09db0c393b18e3115a6a88126e3ccf32946aeb3"
+    },
+    {
+        "name": "twrpgv0.53b_eng.w3x",
+        "md5": "cecaf21362cd9913430633e2ba7d642a",
+        "md5sha1": "0f9f2ea6a094f40695adfa0d267e715d44870c04"
+    },
+    {
+        "name": "twrpgv0.54b_eng.w3x",
+        "md5": "8649d978d820e0f36faa93e9d8820964",
+        "md5sha1": "dd20dced4d619ba5905d55fc5b71c89a50b99511"
+    },
+    {
+        "name": "twrpgv0.55a.w3x",
+        "md5": "5fca36598833f14b3fecd9f5fd4ca121",
+        "md5sha1": "44fce3ced46150e8a40f52a120d4b9936042fcb4"
+    },
+    {
+        "name": "twrpgv0.55a_eng.w3x",
+        "md5": "c43102ff13eeea5ccba8dae27b402b77",
+        "md5sha1": "cfc976bf7d5153c22a1c280f9e17927780ecbd33"
+    },
+    {
+        "name": "twrpgv0.55c_eng.w3x",
+        "md5": "784135ba67fa8468f4a7e2ff4f69fffd",
+        "md5sha1": "ca6d036a5556a0265692fe63a3485531f280cb1a"
+    },
+    {
+        "name": "twrpgv0.55e_eng.w3x",
+        "md5": "5bb3c748d6f8612f8d89daacdce6a427",
+        "md5sha1": "dd951694d30673e865110040607a4c66c19a504f"
+    },
+    {
+        "name": "twrpgv0.56a_eng.w3x",
+        "md5": "fcc3cac16e4d99978298e2a618b013c2",
+        "md5sha1": "61f65506384dc7df178d600ede6f5deaa88b054c"
+    },
+    {
+        "name": "twrpgv0.57a_eng.w3x",
+        "md5": "b8ba60fb6f5f736f5f6ca7a1f6fbb78d",
+        "md5sha1": "9fbbc2587ac903fae3c8ab22bacca3d5d89c053c"
+    },
+    {
+        "name": "twrpgv0.57b_eng.w3x",
+        "md5": "a138ec153f56e96945c7c3dbe9242393",
+        "md5sha1": "060163a2c95048ac1ae63a97016e6f24a8d6400b"
+    },
+    {
+        "name": "twrpgv0.58c.w3x",
+        "md5": "2c29b1756eab50b9537b6bc279507ec7",
+        "md5sha1": "279d434f70fb25e9d150646d964e0402988a9640"
+    },
+    {
+        "name": "twrpgv0.58e_eng.w3x",
+        "md5": "c878a38b20be5bdf65f28f8c2a2f76cb",
+        "md5sha1": "f246ccff8b7df721a66b14a10456f8020f893b39"
+    },
+    {
+        "name": "twrpgv0.58f_eng.w3x",
+        "md5": "66752dd063759cca60ab707c8a217721",
+        "md5sha1": "95bd3bfdb5b8f887053321c8e87b14730ad6b296"
+    },
+    {
+        "name": "twrpgv0.58h_eng.w3x",
+        "md5": "c92b3b9aea7073020d419538fbe5431a",
+        "md5sha1": "2a990c039f3aba8a053ac48bdf9af0d1ab32bacc"
+    },
+    {
+        "name": "twrpgv0.58k_eng.w3x",
+        "md5": "3b0b82f3f2970bf68171d10a990eca74",
+        "md5sha1": "6b3fd6b7fc7235533a10f65c7e7c278eeb517207"
+    },
+    {
+        "name": "twrpgv0.59a_eng.w3x",
+        "md5": "8585ac5ee23ecf4d6ab0e1e94e46254c",
+        "md5sha1": "69b43e3ade3fe3840278286a0077a36e8e4ad07e"
+    },
+    {
+        "name": "twrpgv0.59c_eng.w3x",
+        "md5": "f18c472021381e154b54fd6d76455ebd",
+        "md5sha1": "f42affe433983be09372c1529ac14f91dae412e6"
+    },
+    {
+        "name": "twrpgv0.59d_eng.w3x",
+        "md5": "97b3f556317b2de4ba0225bf15129065",
+        "md5sha1": "1ee879134263830400c12912961501c2e0194a6d"
+    },
+    {
+        "name": "twrpgv0.59e.w3x",
+        "md5": "88354a54c60320f1d1934d0b0cd90e95",
+        "md5sha1": "2cedea179369cea02e13434206a116a34e6c15a6"
+    },
+    {
+        "name": "twrpgv0.59e_eng.w3x",
+        "md5": "4342496052e0aaab1c56fcf7c9e67eb2",
+        "md5sha1": "74c714089f1cc9ca142aa96f425a035ba84d5ca6"
+    },
+    {
+        "name": "twrpgv0.59f_eng.w3x",
+        "md5": "0e760604c16641fff2216ac292160924",
+        "md5sha1": "9f8fa54b1f3e9107988a54a1ab24fc2af3375f8c"
+    },
+    {
+        "name": "twrpgv0.59g_eng.w3x",
+        "md5": "b6d2873a75b60fdc2e3e7dac9860c8f7",
+        "md5sha1": "00ed8148b290f3ef505e4dde9bee8b9872a95907"
+    },
+    {
+        "name": "twrpgv0.59h_eng.w3x",
+        "md5": "96df343d087c64b1c94a07ecfd6b547d",
+        "md5sha1": "c70951fd322d2fb69eec12ecca9d3fd1e8f5f71c"
+    },
+    {
+        "name": "twrpgv0.59k_eng.w3x",
+        "md5": "8a0f2b9f6b1c3adab29ca85780e519fb",
+        "md5sha1": "9d8ac6aa129393dc3e3c157c3f11ffadc890cec3"
+    },
+    {
+        "name": "twrpgv0.59m_eng.w3x",
+        "md5": "1267197ea28b3bb6480b520c553a3177",
+        "md5sha1": "d5aa18717a34330db423fa8b9d711c9b01e2ee92"
+    },
+    {
+        "name": "twrpgv0.59p_eng.w3x",
+        "md5": "938e38b3105c7c9339ebc3654e2a28a0",
+        "md5sha1": "0f43352990d1d11ebf5812f673fe1ddd138fa231"
+    },
+    {
+        "name": "twrpgv0.59q_eng.w3x",
+        "md5": "14f2b732d238839859c3fda6510792e9",
+        "md5sha1": "51ca26d45b7c2efb5918921eeab8fad1cc270480"
+    },
+    {
+        "name": "twrpgv0.59r.w3x",
+        "md5": "a15ea004f6e2ba423766b99d87b8e152",
+        "md5sha1": "23365650b9b6eb9cbd3999b1b7d3f09894079539"
+    },
+    {
+        "name": "twrpgv0.59s_eng.w3x",
+        "md5": "ed2a8bf8dd4086b0458ccf77eccac4ce",
+        "md5sha1": "e69497346d138be4adafbfb25d2ed62820b4d9de"
+    },
+    {
+        "name": "twrpgv0.59t2_eng.w3x",
+        "md5": "fd729f45311119e9610d11b2a23fc3f7",
+        "md5sha1": "bb6cd799bef4df9c09c8c17dac8e982d637427ff"
+    },
+    {
+        "name": "twrpgv0.59t_eng.w3x",
+        "md5": "a3ef7d25a17c621f39fd858f176f470e",
+        "md5sha1": "d78f4e9ca59d25eebe71bd1ee2a146de820a0523"
+    },
+    {
+        "name": "twrpgv0.59u_eng.w3x",
+        "md5": "5036cf019bfc5f6d787c19d9f6ceacd8",
+        "md5sha1": "d2c8874853ebed9eec9fb431c45cffdd553f11d5"
+    },
+    {
+        "name": "twrpgv0.59x_eng.w3x",
+        "md5": "58a7b7113f65670b5d0ed5874255010d",
+        "md5sha1": "8300df61e57d8f95fbb00e445f576508d8850045"
+    },
+    {
+        "name": "twrpgv0.59z_eng.w3x",
+        "md5": "b9ac4ffd25ab427c8e2ed5feb684c197",
+        "md5sha1": "66c186f7720b6c7f9f90c7210cefa7791272dbda"
+    },
+    {
+        "name": "twrpgv0.60a_eng.w3x",
+        "md5": "01b49001061237e15026b7afb84e0be9",
+        "md5sha1": "1ac5d05d6aa8b738c3da5b1439606a70fa0a15fb"
+    },
+    {
+        "name": "twrpgv0.60b_eng.w3x",
+        "md5": "413533d5f3684136281c73dc111320fa",
+        "md5sha1": "138558a7c10ca0dacc832c1f39a2f80a0c3a4095"
+    },
+    {
+        "name": "twrpgv0.60d_eng.w3x",
+        "md5": "00b026e0d0de7abfe814a9c0fe86387d",
+        "md5sha1": "be3c7bdedb638d1f4a86e34c3867188bbaaf49c0"
+    },
+    {
+        "name": "twrpgv0.60e_eng.w3x",
+        "md5": "ad261637a91e0a2b7fdf57dcaefd65e9",
+        "md5sha1": "e2ed2983e3a92f552c95b3f7b388c5f1ab773de3"
+    },
+    {
+        "name": "twrpgv0.60f_eng.w3x",
+        "md5": "347fa3ca59c1d5e75cfd9926fc805291",
+        "md5sha1": "81e49b56823cb1614a2edca81aa9786c1c60e22e"
+    },
+    {
+        "name": "twrpgv0.60g_eng.w3x",
+        "md5": "2639ed4f32266c97ecc7326005523e2e",
+        "md5sha1": "ec11498062297bd82978ca193d37753c8f89a7c8"
+    },
+    {
+        "name": "twrpgv0.60k2_eng.w3x",
+        "md5": "49db8d17ef97b33772150af1b5606f62",
+        "md5sha1": "45ad5042c5c3f84212d47d138ebc74bb7e7a0ab5"
+    },
+    {
+        "name": "twrpgv0.60m_eng.w3x",
+        "md5": "591ee168961fddd65cb9b929f3465faa",
+        "md5sha1": "a9bfad72bccc9d1874920bd4a8f07dca877bc266"
+    },
+    {
+        "name": "twrpgv0.60o_eng.w3x",
+        "md5": "5ccffd92e1824065e7e58511027b3431",
+        "md5sha1": "b4c025a8be37aa91b8a0ee76b9770567cc9369e5"
+    },
+    {
+        "name": "twrpgv0.60p.w3x",
+        "md5": "8e68835c0ead2831eeb0cf308d31395d",
+        "md5sha1": "888457e6700d7f9adf5e35a0f31cffd3db5ed5a2"
+    },
+    {
+        "name": "twrpgv0.60s_eng.w3x",
+        "md5": "9863f55710f7055e777019c822fabf99",
+        "md5sha1": "9f211914a33d1c75b7b8ccef654f2bbffcc4e89d"
+    },
+    {
+        "name": "twrpgv0.60t_eng.w3x",
+        "md5": "ce9a88ef987fd4ef51b0876901510e3d",
+        "md5sha1": "3b83f6e5d0c697945dd698cf6f6a302e14bd720d"
+    },
+    {
+        "name": "twrpgv0.60u_eng.w3x",
+        "md5": "2f876abf62bdbb9100ad4aefb728974d",
+        "md5sha1": "7dd996abcb8c88a2ed5832ef4d453403f4247708"
+    },
+    {
+        "name": "twrpgv0.60v_eng.w3x",
+        "md5": "61a9d24bd28cab5bb77461d15a9de59c",
+        "md5sha1": "cb714d3ccc204df30e3111beadb9249b5ed818ca"
+    },
+    {
+        "name": "twrpgv0.60x_eng.w3x",
+        "md5": "2f015fd649c3e3f3d0e5671684016fb7",
+        "md5sha1": "dd0ec624b5891e055a47640b2c3c4444f8a04a7e"
+    },
+    {
+        "name": "twrpgv0.60z_eng.w3x",
+        "md5": "b4897537d1dfaff98ed6a3a6fb02f6f7",
+        "md5sha1": "6aff9f70dc9140710ced13d0f885a57ea8043db1"
+    },
+    {
+        "name": "twrpgv0.61a_eng.w3x",
+        "md5": "40b6848cce6e2caa98ce1eb3aabe7d3f",
+        "md5sha1": "2661ce30d0cdfe33b11696260e201cf9154dc2cd"
+    },
+    {
+        "name": "twrpgv0.61c_eng.w3x",
+        "md5": "44067daecad5d95c5a504d8ee90ced7f",
+        "md5sha1": "b84df3e771e0d1d93e70074d0df8894c2d97040a"
+    },
+    {
+        "name": "twrpgv0.61d_eng.w3x",
+        "md5": "00146e705aa264ebb4a1be1653dfc4b0",
+        "md5sha1": "5ed443a8a5756188b4938eb10e29d1e686f5eee1"
+    },
+    {
+        "name": "twrpgv0.61e_eng.w3x",
+        "md5": "095a22e51b0de1b744512eca12b2af27",
+        "md5sha1": "d97537cb68ab1f451bdeab3a592815108189f4aa"
+    },
+    {
+        "name": "twrpgv0.61g_eng.w3x",
+        "md5": "4d1ef9eb3440c42055acef3e11e2f4c0",
+        "md5sha1": "55babbfe601e7f5e4007aeeb11d4c41efb6766dd"
+    },
+    {
+        "name": "twrpgv0.61h_eng.w3x",
+        "md5": "4c12e917ebbbb90d97d1da1f507e00ca",
+        "md5sha1": "b75f7c4f50d06bcba4d0e580a18f44449f391052"
+    },
+    {
+        "name": "twrpgv0.61m_eng.w3x",
+        "md5": "7ca5b333145f51aed26294aee8d13f3b",
+        "md5sha1": "99388acfc08461fabe6258d45a5a1c7992aeabd0"
+    },
+    {
+        "name": "twrpgv0.61o_eng.w3x",
+        "md5": "ff63c2756c814e8a6ce01cbbd707d8ec",
+        "md5sha1": "2d1815c64df1f3fc8462f05b127236990fc92608"
+    },
+    {
+        "name": "twrpgv0.61p_eng.w3x",
+        "md5": "16e7e242dd3aac49ae6c1fe1ac85b937",
+        "md5sha1": "bca16d2ee95cd5694f9fcdc599fc4fef32961a17"
+    },
+    {
+        "name": "twrpgv0.61q_eng.w3x",
+        "md5": "0ee1de632053dbbc2122cccfddcd322b",
+        "md5sha1": "072de9a88d067c401bad58e8c62759eb4aab2adc"
+    },
+    {
+        "name": "twrpgv0.61r_eng.w3x",
+        "md5": "2b95dd9e423732901bfd96ff8f33f61c",
+        "md5sha1": "f113ee786cb7882ecadc7fc10d2e150ee0f47540"
+    },
+    {
+        "name": "twrpgv0.61s_eng.w3x",
+        "md5": "8a4c83697f33caddde6785e45c1e481e",
+        "md5sha1": "4b89ccca8d22f1047a390ad4cc5a13bc4b0ad8ca"
+    },
+    {
+        "name": "twrpgv0.61t_eng.w3x",
+        "md5": "7f93f9951741a117d4a8d84b97f9fb09",
+        "md5sha1": "98761d516c96d5eea09af86d5e304220d80cce93"
+    },
+    {
+        "name": "twrpgv0.61v2_eng.w3x",
+        "md5": "04a014877115a0a091e74db7b5002d21",
+        "md5sha1": "dd977c09b54db43fe436e33cc29b860d0b0835ed"
+    },
+    {
+        "name": "twrpgv0.61w2_eng.w3x",
+        "md5": "441eefe28f7a2cabc2ea15191dc90293",
+        "md5sha1": "d5da90b0aae32b3e97cf0294e01a384b6c66865a"
+    },
+    {
+        "name": "twrpgv0.61w_eng.w3x",
+        "md5": "524b21199d80eeb6fdb85750cad92b32",
+        "md5sha1": "32f83ae4fad6083eb8739cf0cd47d4d3342feeb8"
+    },
+    {
+        "name": "twrpgv0.61x_eng.w3x",
+        "md5": "cedd4292a9bdab2cecdc0f4a36853737",
+        "md5sha1": "502fea25ad1803b90dfb6850474b4c0311309b90"
+    },
+    {
+        "name": "twrpgv0.61y_eng.w3x",
+        "md5": "9662bd69ea530bdb63cee122498a9bba",
+        "md5sha1": "18219b38b00064473f915b2bf64d07141d9c6900"
+    },
+    {
+        "name": "twrpgv0.61z2_eng.w3x",
+        "md5": "d7ae0fc6b02f5935b9a12cf025796527",
+        "md5sha1": "d124507b51f9922e01d32a1f8979cc5cf38d69ba"
+    },
+    {
+        "name": "twrpgv0.61z_eng.w3x",
+        "md5": "b680f2015f2b174c95060508d47d9efc",
+        "md5sha1": "19f118668cce8ab3cff495f7a84dddf1bd78492b"
+    },
+    {
+        "name": "twrpgv0.62a2_eng.w3x",
+        "md5": "c51b1b874d0f4944c0550ce60d0f2a0e",
+        "md5sha1": "b23ac1cffe73a93176024aef1c4fc849c4cefa81"
+    },
+    {
+        "name": "twrpgv0.62b_eng.w3x",
+        "md5": "edeb8fae6ca266b16a9e78c9ee56e8d1",
+        "md5sha1": "4ffd0403aef10ab69810abe09514c56db5decfb2"
+    },
+    {
+        "name": "twrpgv0.62c_eng.w3x",
+        "md5": "c74add42dec858686e7e46d4d063efe7",
+        "md5sha1": "5d70dde4f2ad4b0fc18f2437eb08ebd221b000f0"
+    },
+    {
+        "name": "twrpgv0.62d_eng.w3x",
+        "md5": "95dce294ebc9c123848ce5232386207f",
+        "md5sha1": "37bcccfb534885ac4f285a895655a91ace7e1dcc"
+    },
+    {
+        "name": "twrpgv0.62f_eng.w3x",
+        "md5": "c4ec1f77eaa68f08d6c935f1bb17bfa6",
+        "md5sha1": "76c1e1c80dfaa628dc0f3986605f461e5a8b1bf1"
+    },
+    {
+        "name": "twrpgv0.62g_eng.w3x",
+        "md5": "3f66596bb2f35a82f05aacd24a47feab",
+        "md5sha1": "594215f89c2fadb76f330898dfe1fe15a6d89f72"
+    },
+    {
+        "name": "twrpgv0.62h_eng.w3x",
+        "md5": "d5c91d67cdc8ce6da0a35db12ce2361c",
+        "md5sha1": "cd53ad6777988bc5911642f959cce5382a1c88a4"
+    },
+    {
+        "name": "twrpgv0.62i2_eng.w3x",
+        "md5": "d6df9a88c61e080d369757900c15c2cb",
+        "md5sha1": "32950ae5d4c74e76432cf39500a857b13420a376"
+    },
+    {
+        "name": "twrpgv0.62i_eng.w3x",
+        "md5": "c2bd62b047e67c7a6c413cd19ddb021e",
+        "md5sha1": "a0f689acd6d1cd0dd4911b657835e086626933c7"
+    },
+    {
+        "name": "twrpgv0.62j2_eng.w3x",
+        "md5": "bc746410254d07dd3d2e441bef8c92b9",
+        "md5sha1": "129c89ac01891ea697489413b1ee61528e46c263"
+    },
+    {
+        "name": "twrpgv0.62j_eng.w3x",
+        "md5": "a4aeefc8d6cfed01b4e7ede4c582cd98",
+        "md5sha1": "3b27348ff51b5c211d10b889894d10700a4ce408"
+    },
+    {
+        "name": "twrpgv0.62k_eng.w3x",
+        "md5": "27620a3750baae390ca0ecd40eb25b2b",
+        "md5sha1": "def6b981fae55458f2c5df5b6f178f7336edabf3"
+    },
+    {
+        "name": "twrpgv0.62l2.w3x",
+        "md5": "e720994572d502e0410d91fd6fb4866b",
+        "md5sha1": "04a1d53f1de0bbeb8a3b6949a628e1a009ea16b3"
+    },
+    {
+        "name": "twrpgv0.62l2_eng.w3x",
+        "md5": "ae6e0b901e326433489da2849ecc4c6f",
+        "md5sha1": "355457720432fa7b35926bc7257aff8b7cdf0022"
+    },
+    {
+        "name": "twrpgv0.62l_eng.w3x",
+        "md5": "a04c47bda94878a1def6d0f300a4f5f8",
+        "md5sha1": "fe1de45aa110fb50957e4596f34a5ff5c4e1e855"
+    },
+    {
+        "name": "twrpgv0.62m2_eng.w3x",
+        "md5": "903d24162f215e5ff1a6d6358ca35fe2",
+        "md5sha1": "db3a6f1faa17702ba00341d85aa13d08de8c4875"
+    },
+    {
+        "name": "twrpgv0.62m_eng.w3x",
+        "md5": "6c811684636a2b6eac5df9e207d21c54",
+        "md5sha1": "8889696fedf7dc4f26cf59034f9ea7b4d1e970c2"
+    },
+    {
+        "name": "twrpgv0.62p.w3x",
+        "md5": "4cd67da7f881a5fb0dba50698e3ca1e0",
+        "md5sha1": "5446c610beca30c6e833aa6c3720143e337edeb3"
+    },
+    {
+        "name": "twrpgv0.62p2_eng.w3x",
+        "md5": "6944f7e63f460ee2e0228f1539b058ba",
+        "md5sha1": "48b2388fbd5e272adfcc124905f48f6928de5138"
+    },
+    {
+        "name": "twrpgv0.62q_eng.w3x",
+        "md5": "d335a11f2cef97e052ab7d20fc7f7b13",
+        "md5sha1": "714254bc461ebec164d36131f3303d10854081fa"
+    },
+    {
+        "name": "twrpgv0.62r_eng.w3x",
+        "md5": "6b14eab2043618768f218598af30e779",
+        "md5sha1": "ad1a409a9d7df78e09b9cdbcb653038100713216"
+    },
+    {
+        "name": "twrpgv0.62s2_eng.w3x",
+        "md5": "0fb7c3c59b511e45a376625889ab3017",
+        "md5sha1": "b2c6d138c7885259609f3ca005a8304bac1dc11e"
+    },
+    {
+        "name": "twrpgv0.62t2_eng.w3x",
+        "md5": "e91fa4eeb1c663eca2c9cfed8f3ee50f",
+        "md5sha1": "31745e3ad96535f212e41e61d191242109cc9db5"
+    },
+    {
+        "name": "twrpgv0.62t_eng.w3x",
+        "md5": "e2fa5fd2b0a341f5210d89b1eb8d593b",
+        "md5sha1": "f4f4a501e21ef9da999e7af8d9eaadedde832fa7"
+    },
+    {
+        "name": "twrpgv0.62u_eng.w3x",
+        "md5": "dc17a861cb84c719f3efb07042588708",
+        "md5sha1": "9f1eb5e0a87e06337f749c8bf9f2605f0ff3c245"
+    },
+    {
+        "name": "twrpgv0.62v_eng.w3x",
+        "md5": "935820cf5f1e112fe91d9708980f5e22",
+        "md5sha1": "1d82656e93688641a4f0cc16fcffbcf34cc30b05"
+    },
+    {
+        "name": "twrpgv0.62w_eng.w3x",
+        "md5": "4d6f5be04dc8b16ab064de34c41a3ced",
+        "md5sha1": "a7491cd2efd9754f5f9bd8d1d85c9f3e2c1f7884"
+    },
+    {
+        "name": "twrpgv0.62y_eng.w3x",
+        "md5": "1c848e4436d8193114d06ff7352ac1cd",
+        "md5sha1": "6438d6faa3b6e3f8ab31b6b4fd329ab08cab0ddc"
+    },
+    {
+        "name": "twrpgv0.62z2.w3x",
+        "md5": "83bbe95f88c57e04d00f8a70ffcc8322",
+        "md5sha1": "6e87fb9c659fc7d9caaf8cf4d105d019e177b17d"
+    },
+    {
+        "name": "twrpgv0.62z3_eng.w3x",
+        "md5": "f3a4570af2de3e11355b5f36a9fc8fa2",
+        "md5sha1": "22291c6f28f2b68428ddedef7209d99a30f807fb"
+    },
+    {
+        "name": "twrpgv0.62z4_eng.w3x",
+        "md5": "954aa6d27463b7c8e23d889b3df804dc",
+        "md5sha1": "6042b1240c1ef7c9cace60d1c1a8c635f1225693"
+    },
+    {
+        "name": "twrpgv0.62z5_eng.w3x",
+        "md5": "7c1cd4d6628baf44dc4904324b9673d4",
+        "md5sha1": "f3e63863a5574dbb1043c7c60ebfe6139ceb9427"
+    },
+    {
+        "name": "twrpgv0.62z6_eng.w3x",
+        "md5": "cf4c2f3bb33ffcc77a4ba9c1624e734d",
+        "md5sha1": "b8682f8b06a10e7007b8d45869e76011f69e9d00"
+    },
+    {
+        "name": "twrpgv0.62z_eng.w3x",
+        "md5": "e84d5a90e036ed6f9da264467f59fee6",
+        "md5sha1": "6135d4381d00cb8c9aa29b79847ba5b739a8fd39"
+    },
+    {
+        "name": "twrpgv0.63e_eng.w3x",
+        "md5": "f1b459cd6bad3400759c2216c4214e3c",
+        "md5sha1": "ff283402528918d4f23accee8501d48ca18dda89"
+    },
+    {
+        "name": "twrpgv0.63f_eng.w3x",
+        "md5": "7058bb50bf9b5467e1a507760e3e408d",
+        "md5sha1": "6390c87176a9a745b855ebbdf491523f59700fe9"
+    },
+    {
+        "name": "twrpgv0.63g2_eng.w3x",
+        "md5": "213f6552e37c1cade040a7e07502eb83",
+        "md5sha1": "dd243b5290675cca237979f0feee0328a3379e84"
+    },
+    {
+        "name": "twrpgv0.63g_eng.w3x",
+        "md5": "967fccf7c248815321b37bc6036594db",
+        "md5sha1": "391e268c7f9cf3ad144da8cc2a387479dc9482d1"
+    },
+    {
+        "name": "twrpgv0.63h_eng.w3x",
+        "md5": "ff3575b8ed91711a617fdf8327e4a279",
+        "md5sha1": "dc639455e736cc17bcd4fa643df4339b68b50caa"
+    },
+    {
+        "name": "twrpgv0.64b_eng.w3x",
+        "md5": "d90add3b999ac95d41e9442fe8ffa4f7",
+        "md5sha1": "a46d2a62cb4226de48dc19f890d4524671c9f601"
+    },
+    {
+        "name": "twrpgv0.64f2_eng.w3x",
+        "md5": "409f68ee0dde6ea14a7aab92363960f4",
+        "md5sha1": "a872320b82a818da396346dc54683921890c4f13"
+    },
+    {
+        "name": "twrpgv0.64f_eng.w3x",
+        "md5": "55ad2a3531286aa87ad73a3c143c4417",
+        "md5sha1": "58c4f8b10c627da2075b2f75358d13721b434396"
+    },
+    {
+        "name": "twrpgv0.64g3_eng.w3x",
+        "md5": "0f9a76f24a06017dc18ccd0c57634ad8",
+        "md5sha1": "68c54e85f62665f0830e6fa31e3fe3bc301e49c0"
+    },
+    {
+        "name": "twrpgv0.64g_eng.w3x",
+        "md5": "c32d785a01f0d65428816470a8b04f45",
+        "md5sha1": "a83544da8f87c11e2bbb82b3eee332af95dc0d73"
+    },
+    {
+        "name": "twrpgv0.64h.w3x",
+        "md5": "50e54fc24859daacf1c775c3b4adbc05",
+        "md5sha1": "b66229a7f77deb6c8f57cfd3d052bfd5691760b8"
+    },
+    {
+        "name": "twrpgv0.64h_eng.w3x",
+        "md5": "5a4b8276d5b8b82687d413a803febccc",
+        "md5sha1": "934ada4546e99b949e107718cf51a5920c709c2d"
+    },
+    {
+        "name": "twrpgv0.65a_eng.w3x",
+        "md5": "87912619eaf40b6392dce7fcd510f6eb",
+        "md5sha1": "ccecaeeaa2db4c7fdda60a66534b2d1402dff0b6"
+    },
+    {
+        "name": "twrpgv0.65b_eng.w3x",
+        "md5": "799cf75eff2483beee0593132f144de1",
+        "md5sha1": "6b1c16ebe66e9d367fa24057b70c8dbc514fcd0f"
+    },
+    {
+        "name": "twrpgv0.66a_eng.w3x",
+        "md5": "b6c1b54c82a24d73e2982f7eaf962237",
+        "md5sha1": "d29e0517c7e8a6e051cbb4ace92bf8c195287b10"
+    },
+    {
+        "name": "twrpgv0.66b_eng.w3x",
+        "md5": "cf8a2a9ce2584daefba0bda4f883f3b3",
+        "md5sha1": "b07d3ce42e3d29055a0ff2a16db128b18de6cdce"
+    },
+    {
+        "name": "twrpgv0.66c_eng.w3x",
+        "md5": "34ba8fe28436cbdf6ac150cdfeaa6dbd",
+        "md5sha1": "45d84690aa98c44ecb3b6757b89f47fa4b34aa9a"
+    },
+    {
+        "name": "twrpgv0.66f_eng.w3x",
+        "md5": "10efbee0d41bf696d430d48e29a2e094",
+        "md5sha1": "4e2f308e267e9963e4eecb7f2a3a485f9c115ba2"
+    },
+    {
+        "name": "twrpgv0.66h_eng.w3x",
+        "md5": "abd5946a20f2abf634b02ab156a1f5a8",
+        "md5sha1": "79819dd2bb6e598691d29c71874cb4d009bea4cd"
+    },
+    {
+        "name": "twrpgv0.66j_eng.w3x",
+        "md5": "1cd3d081aea754043da47fb50a691590",
+        "md5sha1": "04c0daeb5d549e9b11fe33d18f0d54e3337d3665"
+    },
+    {
+        "name": "twrpgv0.66k_eng.w3x",
+        "md5": "c509b408607b8bf3c59c9953c7ababd8",
+        "md5sha1": "548ea515490149b3b9ba1706d096165a532da315"
+    },
+    {
+        "name": "twrpgv0.66m_eng.w3x",
+        "md5": "2eea54de961c12322d11c14ea486e054",
+        "md5sha1": "5055125a84b5244376fb5c90d24b744a280c2bb5"
+    },
+    {
+        "name": "twrpgv0.66o_eng.w3x",
+        "md5": "9f7084e3931aa526c40c01d40f798458",
+        "md5sha1": "72c1847c178f3b795a97e8375932e5c9e7a2fd2b"
+    }
+]
