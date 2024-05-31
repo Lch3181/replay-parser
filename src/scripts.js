@@ -5,8 +5,9 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     const username = document.getElementById('usernameInput').value;
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = ''; // Clear previous results
+    document.body.style.cursor = 'wait';
 
-    const uploadPromises = Array.from(files).map((file) => {
+    const uploadPromises = Array.from(files).map((file, index) => {
         const formData = new FormData();
         formData.append('file', file);
         formData.append('username', username);
@@ -15,26 +16,29 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
             method: 'POST',
             body: formData
         })
-        .then(response => response.json())
-        .then(data => {
-            fetchUpload(file.name, data);
-        })
-        .catch(error => {
-            row.body.innerText = 'Error: ' + error.message;
-        });
+            .then(response => response.json())
+            .then(data => {
+                fetchUpload(index, file.name, data, username);
+            })
+            .catch(error => {
+                row.body.innerText = 'Error: ' + error.message;
+            });
     });
 
     // Wait for all upload promises to resolve
     await Promise.allSettled(uploadPromises);
+    document.body.style.cursor = 'default';
 });
 
-function createRow(filename) {
+function createRow(index, filename) {
     const resultsDiv = document.getElementById('results');
 
     // div
     const resultDiv = document.createElement('div');
     resultDiv.className = 'result-div';
     resultDiv.id = `result-${filename}`;
+    resultDiv.dataset.index = index;
+    resultDiv.style.order = index;
 
     // title
     const title = document.createElement('h3');
@@ -145,7 +149,7 @@ function createChatHistoryPopup(filename) {
     return chatPopupDiv
 }
 
-function fetchUpload(filename, data) {
+function fetchUpload(index, filename, data, username) {
     const gameData = data.gameData;
     const loots = data.loots;
     const chat = data.chatData
@@ -158,7 +162,7 @@ function fetchUpload(filename, data) {
     Host: ${gameData.host}<br>
     Game Name: ${gameData.gameName}`;
 
-    const row = createRow(filename);
+    const row = createRow(index, filename);
     createChatHistoryPopup(filename);
 
     row.hoverPanel.innerHTML = gameDataHtml;
@@ -166,7 +170,7 @@ function fetchUpload(filename, data) {
     if (loots.length === 0) {
         row.body.innerText = 'No items found.';
     } else {
-        row.body.innerText = loots.map(loot => {
+        row.body.innerText = loots.filter(loot => loot.playerName.toLowerCase().includes(username.toLowerCase())).map(loot => {
             return `${loot.gameTime} ${loot.playerName}: ${loot.itemName}`
         }).join('\n');
     }
