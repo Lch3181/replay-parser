@@ -4,16 +4,9 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     const files = document.getElementById('fileInput').files;
     const username = document.getElementById('usernameInput').value;
     const resultsDiv = document.getElementById('results');
-    const chatPopups = document.getElementById('chat-container')
     resultsDiv.innerHTML = ''; // Clear previous results
 
-    const uploadPromises = Array.from(files).map(file => {
-        const row = createRow(file.name);
-        const chatPopupDiv = createChatHistoryPopup(file.name);
-
-        resultsDiv.appendChild(row.resultDiv);
-        chatPopups.appendChild(chatPopupDiv);
-
+    const uploadPromises = Array.from(files).map((file) => {
         const formData = new FormData();
         formData.append('file', file);
         formData.append('username', username);
@@ -24,7 +17,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         })
         .then(response => response.json())
         .then(data => {
-            fetchUpload(file.name, row, data);
+            fetchUpload(file.name, data);
         })
         .catch(error => {
             row.body.innerText = 'Error: ' + error.message;
@@ -36,6 +29,8 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
 });
 
 function createRow(filename) {
+    const resultsDiv = document.getElementById('results');
+
     // div
     const resultDiv = document.createElement('div');
     resultDiv.className = 'result-div';
@@ -69,7 +64,7 @@ function createRow(filename) {
 
         document.getElementById(`chat-popup-${filename}`).style.display = 'block';
     });
-    
+
     resultDiv.appendChild(chatButton);
     resultDiv.appendChild(title);
     resultDiv.appendChild(body);
@@ -89,64 +84,68 @@ function createRow(filename) {
         const panelHeight = hoverPanel.offsetHeight;
         const pageWidth = window.innerWidth;
         const pageHeight = window.innerHeight;
-    
+
         let leftPosition = e.pageX + 15;
         let topPosition = e.pageY + 15;
-    
+
         // Check if the hover panel would extend beyond the right edge
         if (leftPosition + panelWidth > pageWidth) {
             leftPosition = e.pageX - panelWidth - 15;
         }
-    
+
         // Check if the hover panel would extend beyond the bottom edge
         if (topPosition + panelHeight > pageHeight) {
             topPosition = e.pageY - panelHeight - 15;
         }
-    
+
         hoverPanel.style.left = leftPosition + 'px';
         hoverPanel.style.top = topPosition + 'px';
     });
 
-    return { resultDiv, body, hoverPanel }
+    resultsDiv.append(resultDiv)
+    return { body, hoverPanel }
 }
 
 function createChatHistoryPopup(filename) {
+    const chatPopups = document.getElementById('chat-container')
+
     // Create the chat popup
     const chatPopupDiv = document.createElement('div');
     chatPopupDiv.className = 'chat-popup';
     chatPopupDiv.id = `chat-popup-${filename}`;
-    
+
     const headerDiv = document.createElement('div');
     headerDiv.className = 'header';
-    
+
     const closeChatButton = document.createElement('button');
     closeChatButton.className = 'close-button';
     closeChatButton.innerText = 'Close';
     closeChatButton.addEventListener('click', () => {
         document.getElementById(`chat-popup-${filename}`).style.display = 'none';
     });
-    
+
     const chatTitle = document.createElement('h4');
     chatTitle.innerText = 'Chat History';
-    
+
     headerDiv.appendChild(chatTitle);
     headerDiv.appendChild(closeChatButton);
-    
+
     const chatContentDiv = document.createElement('div');
     chatContentDiv.className = 'chat-content';
-    
+
     const chatHistory = document.createElement('ul');
     chatHistory.id = `chat-history-${filename}`;
-    
+
     chatContentDiv.appendChild(chatHistory);
-    
+
     chatPopupDiv.appendChild(headerDiv);
     chatPopupDiv.appendChild(chatContentDiv);
-    
+
+    chatPopups.append(chatPopupDiv)
     return chatPopupDiv
 }
 
-function fetchUpload(filename, row, data) {
+function fetchUpload(filename, data) {
     const gameData = data.gameData;
     const loots = data.loots;
     const chat = data.chatData
@@ -159,16 +158,20 @@ function fetchUpload(filename, row, data) {
     Host: ${gameData.host}<br>
     Game Name: ${gameData.gameName}`;
 
+    const row = createRow(filename);
+    createChatHistoryPopup(filename);
+
     row.hoverPanel.innerHTML = gameDataHtml;
 
     if (loots.length === 0) {
         row.body.innerText = 'No items found.';
     } else {
-        row.body.innerText = loots.join('\n');
+        row.body.innerText = loots.map(loot => {
+            return `${loot.gameTime} ${loot.playerName}: ${loot.itemName}`
+        }).join('\n');
     }
 
     fetchChatHistory(filename, chat); // Function to fetch and display chat history
-
 }
 
 function fetchChatHistory(fileName, chatData) {
@@ -183,6 +186,21 @@ function fetchChatHistory(fileName, chatData) {
 
     const chatButton = document.getElementById(`open-button-${fileName}`)
     chatButton.disabled = false
+}
+
+// Function to get unique data based on id and newest timestamp
+function filterUniqueNewest(dataArray) {
+    const uniqueData = dataArray.reduce((acc, current) => {
+        const existing = acc.find(item => item.id === current.id);
+        if (!existing || new Date(current.timestamp) > new Date(existing.timestamp)) {
+            // If no existing object or current object is newer, replace/add it
+            acc = acc.filter(item => item.id !== current.id); // Remove existing
+            acc.push(current); // Add current
+        }
+        return acc;
+    }, []);
+
+    return uniqueData;
 }
 
 function closeChatPopup() {

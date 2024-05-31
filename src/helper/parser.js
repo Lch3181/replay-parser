@@ -17,7 +17,7 @@ async function init() {
     }
 }
 
-async function parseW3G(filepath, username) {
+async function parseW3G(filepath) {
     try {
         const buffer = fs.readFileSync(filepath);
         const parser = new ReplayParser();
@@ -80,14 +80,13 @@ async function parseW3G(filepath, username) {
         // optained loots from chest
         const loots = items.map((item) => {
             try {
-                const gameTime = msToReadableTime(item.time)
-                const playerName = getPlayerById(playerData, item.playerId).playerName;
-                if (username != "" && !playerName.toLowerCase().includes(username)) {
-                    return null;
-                }
+                const loot = {
+                    gameTime: msToReadableTime(item.time),
+                    playerName: getPlayerById(playerData, item.playerId).playerName,
+                    itemName: getItemNameById(item.itemId)
+                };
 
-                const itemName = getItemNameById(item.itemId);
-                return `${gameTime} ${playerName}: ${itemName}`;
+                return loot;
             } catch (error) {
                 return null; // or handle the error in some other way
             }
