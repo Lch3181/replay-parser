@@ -10,7 +10,6 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     const uploadPromises = Array.from(files).map((file, index) => {
         const formData = new FormData();
         formData.append('file', file);
-        formData.append('username', username);
 
         return fetch('/parse-w3g', {
             method: 'POST',

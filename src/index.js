@@ -40,15 +40,13 @@ portfinder.getPortPromise()
             app.post('/parse-w3g', upload.single('file'), async (req, res) => {
                 console.log(`Thread ${process.pid} POST /parse-w3g ${req.file.originalname || 'Unknown Filename'}`);
 
-                const username = req.body.username.toLowerCase() || "";
-
                 if (!req.file) {
                     return res.status(400).send('No file uploaded.');
                 }
 
                 try {
                     const filePath = req.file.path;
-                    let result = await parseW3G(filePath, username);
+                    let result = await parseW3G(filePath);
 
                     res.send(result);
                 } catch (error) {
