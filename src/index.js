@@ -16,7 +16,6 @@ const port = 3000;
 portfinder.setBasePort(port);
 portfinder.getPortPromise()
     .then((port) => {
-
         if (cluster.isMaster) {
             console.log(`Server is running on http://localhost:${port}`);
 
@@ -24,12 +23,6 @@ portfinder.getPortPromise()
             for (let i = 0; i < numCPUs; i++) {
                 cluster.fork();
             }
-
-            cluster.on('exit', (worker, code, signal) => {
-                console.log(`Thread ${worker.process.pid} died`);
-                // Optionally restart the worker
-                cluster.fork();
-            });
         } else {
             const app = express();
 
