@@ -23,7 +23,7 @@ async function parseW3G(filepath) {
         const parser = new ReplayParser();
         let time = 0; //ms
         let gameData = {};
-        let playerData = null;
+        let playerData = {};
         let chat = [];
         let items = [];
 
