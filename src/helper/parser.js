@@ -44,14 +44,18 @@ async function parseW3G(filepath) {
             // user chat message
             if (block.id === 0x20) {
                 const player = getPlayerById(playerData, block.playerId)
-                const chatData = {
+                chat.push({
                     time: msToReadableTime(time),
                     player: player.playerName,
                     color: player.hex,
                     mode: getMessageType(block.mode),
                     message: block.message
-                };
-                chat.push(chatData)
+                });
+
+                const extractedName = extractConvertName(block.message)
+                if (extractedName !== null && extractedName !== player.playerName) {
+                    player.playerName = `${extractedName}(${player.playerName})`
+                }
             }
 
             // user action
@@ -146,10 +150,6 @@ function getItemNameById(id) {
 }
 
 function getPlayerById(playerData, id) {
-    if (!playerData) {
-        throw new Error('Player data not initialized. Please call init() first.');
-    }
-
     const player = playerData.find(player => player.playerId === id);
     if (!player) {
         throw new Error(`Player with id ${id} not found.`);
@@ -210,6 +210,15 @@ function getMessageType(code) {
         default:
             return "Direct Message";
     }
+}
+
+function extractConvertName(input) {
+    const pattern = /^-convert\s+(.*)/;
+    const match = input.match(pattern);
+    if (match) {
+        return match[1];
+    }
+    return null; // or return an appropriate value if the string does not start with -convert
 }
 
 module.exports = {
