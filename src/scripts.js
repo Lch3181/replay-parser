@@ -4,6 +4,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     const files = document.getElementById('fileInput').files;
     const username = document.getElementById('usernameInput').value;
     const mapname = document.getElementById('mapnameInput').value;
+    const message = document.getElementById('messageInput').value;
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = ''; // Clear previous results
     document.documentElement.style.cursor = 'wait';
@@ -18,7 +19,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         })
             .then(response => response.json())
             .then(data => {
-                fetchUpload(index, file.name, data, username, mapname);
+                fetchUpload(index, file.name, data, username, mapname, message);
             })
             .catch(error => {
                 row.body.innerText = 'Error: ' + error.message;
@@ -149,7 +150,7 @@ function createChatHistoryPopup(filename) {
     return chatPopupDiv
 }
 
-function fetchUpload(index, filename, data, username, mapname) {
+function fetchUpload(index, filename, data, username, mapname, message) {
     const gameData = data.gameData;
     const playerData = data.playerData;
     const chat = data.chatData
@@ -170,6 +171,13 @@ function fetchUpload(index, filename, data, username, mapname) {
         }
     }
 
+    if (message !== "") {
+        if (!chat.some(chat => chat.message.toLowerCase().includes(message.toLowerCase()))) {
+            return
+        }
+    }
+    
+    // elements
     const gameDataHtml = `
     <strong>Game Information:</strong><br>
     Version: ${gameData.version || 0}<br>
