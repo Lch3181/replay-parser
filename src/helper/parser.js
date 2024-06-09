@@ -46,7 +46,7 @@ async function parseW3G(filepath) {
                 const player = getPlayerById(playerData, block.playerId)
                 chat.push({
                     time: msToReadableTime(time),
-                    player: player.playerName,
+                    player: player.convertedName || player.playerName,
                     color: player.hex,
                     mode: getMessageType(block.mode),
                     message: block.message
@@ -54,7 +54,7 @@ async function parseW3G(filepath) {
 
                 const extractedName = extractConvertName(block.message)
                 if (extractedName !== null && extractedName !== player.playerName) {
-                    player.playerName = `${extractedName}(${player.playerName})`
+                    player.convertedName = `${extractedName}(${player.playerName})`
                 }
             }
 
@@ -84,9 +84,10 @@ async function parseW3G(filepath) {
         // optained loots from chest
         const loots = items.map((item) => {
             try {
+                const player = getPlayerById(playerData, item.playerId)
                 const loot = {
                     gameTime: msToReadableTime(item.time),
-                    playerName: getPlayerById(playerData, item.playerId).playerName,
+                    playerName: player.convertedName || player.playerName,
                     itemName: getItemNameById(item.itemId)
                 };
 
@@ -102,6 +103,7 @@ async function parseW3G(filepath) {
         // result json
         const result = {
             gameData: gameData,
+            playerData: playerData,
             chatData: chat,
             loots: uniqueloots
         };
