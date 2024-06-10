@@ -3,7 +3,8 @@ const path = require('path');
 const ReplayParser = require("w3gjs/dist/lib/parsers/ReplayParser").default;
 
 let itemData = null;
-const checksumList = path.join(__dirname, 'twrpgChecksum.json');
+
+const checksumList = JSON.parse(fs.readFileSync(path.join(__dirname, 'twrpgChecksum.json'), 'utf8'));
 
 // Initialize item data
 async function init() {
@@ -233,10 +234,8 @@ function extractConvertName(input) {
 
 // Function to check if a checksum is in the list
 function isChecksumInList(filepath, sha1) {
-    const checksums = JSON.parse(fs.readFileSync(checksumList, 'utf8'));
-
     const filename = filepath.split(/[/\\]+/).pop();
-    const checksum = checksums.find(item => item.name === filename);
+    const checksum = checksumList.find(item => item.name === filename);
 
     if(checksum) {
         return checksum.sha1 === sha1;
