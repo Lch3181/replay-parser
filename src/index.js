@@ -16,7 +16,6 @@ const port = 3000;
 portfinder.setBasePort(port);
 portfinder.getPortPromise()
     .then((port) => {
-
         if (cluster.isMaster) {
             console.log(`Server is running on http://localhost:${port}`);
 
@@ -24,12 +23,6 @@ portfinder.getPortPromise()
             for (let i = 0; i < numCPUs; i++) {
                 cluster.fork();
             }
-
-            cluster.on('exit', (worker, code, signal) => {
-                console.log(`Thread ${worker.process.pid} died`);
-                // Optionally restart the worker
-                cluster.fork();
-            });
         } else {
             const app = express();
 
@@ -47,15 +40,13 @@ portfinder.getPortPromise()
             app.post('/parse-w3g', upload.single('file'), async (req, res) => {
                 console.log(`Thread ${process.pid} POST /parse-w3g ${req.file.originalname || 'Unknown Filename'}`);
 
-                const username = req.body.username.toLowerCase() || "";
-
                 if (!req.file) {
                     return res.status(400).send('No file uploaded.');
                 }
 
                 try {
                     const filePath = req.file.path;
-                    let result = await parseW3G(filePath, username);
+                    let result = await parseW3G(filePath);
 
                     res.send(result);
                 } catch (error) {

@@ -3,14 +3,15 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
 
     const files = document.getElementById('fileInput').files;
     const username = document.getElementById('usernameInput').value;
+    const mapname = document.getElementById('mapnameInput').value;
+    const message = document.getElementById('messageInput').value;
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = ''; // Clear previous results
-    document.body.style.cursor = 'wait';
+    document.documentElement.style.cursor = 'wait';
 
     const uploadPromises = Array.from(files).map((file, index) => {
         const formData = new FormData();
         formData.append('file', file);
-        formData.append('username', username);
 
         return fetch('/parse-w3g', {
             method: 'POST',
@@ -18,7 +19,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         })
             .then(response => response.json())
             .then(data => {
-                fetchUpload(index, file.name, data, username);
+                fetchUpload(index, file.name, data, username, mapname, message);
             })
             .catch(error => {
                 row.body.innerText = 'Error: ' + error.message;
@@ -27,7 +28,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
 
     // Wait for all upload promises to resolve
     await Promise.allSettled(uploadPromises);
-    document.body.style.cursor = 'default';
+    document.documentElement.style.cursor = 'default';
 });
 
 function createRow(index, filename, validMap) {
@@ -152,11 +153,34 @@ function createChatHistoryPopup(filename) {
     return chatPopupDiv
 }
 
-function fetchUpload(index, filename, data, username) {
+function fetchUpload(index, filename, data, username, mapname, message) {
     const gameData = data.gameData;
-    const loots = data.loots;
+    const playerData = data.playerData;
     const chat = data.chatData
+    const loots = data.loots;
 
+    // filters
+    if (username !== "") {
+        const playerName = playerData.some(player => player.playerName.toLowerCase().includes(username.toLowerCase()))
+        const convertedName = playerData.some(player => player.convertedName.toLowerCase().includes(username.toLowerCase()))
+        if (!playerName && !convertedName) {
+            return
+        }
+    }
+
+    if (mapname !== "") {
+        if (!gameData.map.toLowerCase().includes(mapname.toLowerCase())) {
+            return
+        }
+    }
+
+    if (message !== "") {
+        if (!chat.some(chat => chat.message.toLowerCase().includes(message.toLowerCase()))) {
+            return
+        }
+    }
+    
+    // elements
     const gameDataHtml = `
     <strong>Game Information:</strong><br>
     Version: ${gameData.version || 0}<br>
@@ -176,7 +200,7 @@ function fetchUpload(index, filename, data, username) {
     if (loots.length === 0) {
         row.body.innerText = 'No items found.';
     } else {
-        row.body.innerText = loots.filter(loot => loot.playerName.toLowerCase().includes(username.toLowerCase())).map(loot => {
+        row.body.innerText = loots.map(loot => {
             return `${loot.gameTime} ${loot.playerName}: ${loot.itemName}`
         }).join('\n');
     }

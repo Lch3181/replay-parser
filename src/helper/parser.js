@@ -25,7 +25,7 @@ async function parseW3G(filepath) {
         const parser = new ReplayParser();
         let time = 0; //ms
         let gameData = {};
-        let playerData = null;
+        let playerData = {};
         let chat = [];
         let items = [];
 
@@ -48,14 +48,18 @@ async function parseW3G(filepath) {
             // user chat message
             if (block.id === 0x20) {
                 const player = getPlayerById(playerData, block.playerId)
-                const chatData = {
+                chat.push({
                     time: msToReadableTime(time),
-                    player: player.playerName,
+                    player: player.convertedName || player.playerName,
                     color: player.hex,
                     mode: getMessageType(block.mode),
                     message: block.message
-                };
-                chat.push(chatData)
+                });
+
+                const extractedName = extractConvertName(block.message)
+                if (extractedName !== null && extractedName !== player.playerName) {
+                    player.convertedName = `${extractedName}(${player.playerName})`
+                }
             }
 
             // user action
@@ -84,9 +88,10 @@ async function parseW3G(filepath) {
         // optained loots from chest
         const loots = items.map((item) => {
             try {
+                const player = getPlayerById(playerData, item.playerId)
                 const loot = {
                     gameTime: msToReadableTime(item.time),
-                    playerName: getPlayerById(playerData, item.playerId).playerName,
+                    playerName: player.convertedName || player.playerName,
                     itemName: getItemNameById(item.itemId)
                 };
 
@@ -106,6 +111,7 @@ async function parseW3G(filepath) {
         // result json
         const result = {
             gameData: gameData,
+            playerData: playerData,
             chatData: chat,
             loots: uniqueloots
         };
@@ -155,10 +161,6 @@ function getItemNameById(id) {
 }
 
 function getPlayerById(playerData, id) {
-    if (!playerData) {
-        throw new Error('Player data not initialized. Please call init() first.');
-    }
-
     const player = playerData.find(player => player.playerId === id);
     if (!player) {
         throw new Error(`Player with id ${id} not found.`);
@@ -219,6 +221,15 @@ function getMessageType(code) {
         default:
             return "Direct Message";
     }
+}
+
+function extractConvertName(input) {
+    const pattern = /^-convert\s+(.*)/;
+    const match = input.match(pattern);
+    if (match) {
+        return match[1];
+    }
+    return null; // or return an appropriate value if the string does not start with -convert
 }
 
 // Function to check if a checksum is in the list
