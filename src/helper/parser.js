@@ -35,8 +35,7 @@ async function parseW3G(filepath) {
                 version: info.subheader.version,
                 length: msToReadableTime(info.subheader.replayLengthMS),
                 map: info.metadata.map.mapName,
-                md5: info.metadata.map.mapChecksum,
-                md5sha1: info.metadata.map.mapChecksumSha1,
+                sha1: info.metadata.map.mapChecksumSha1,
                 host: info.metadata.map.creator,
                 gameName: info.metadata.gameName
             };
@@ -102,11 +101,11 @@ async function parseW3G(filepath) {
         }).filter(entry => entry !== null);
 
         // Remove duplicates using Set
-        const uniqueloots = [...new Set(loots)];
+        const uniqueloots = removeDuplicates(loots);
 
         //checksum
-        const validMap = isChecksumInList(gameData.md5, gameData.md5sha1)
-        gameData.validMap = validMap
+        const validMap = isChecksumInList(gameData.map, gameData.sha1);
+        gameData.validMap = validMap;
 
         // result json
         const result = {
@@ -118,7 +117,7 @@ async function parseW3G(filepath) {
 
         return result;
     } catch (error) {
-        console.log(error)
+        console.log(error);
         throw error;
     }
 }
@@ -233,10 +232,26 @@ function extractConvertName(input) {
 }
 
 // Function to check if a checksum is in the list
-function isChecksumInList(md5, sha1) {
-    const list = JSON.parse(fs.readFileSync(checksumList, 'utf8'));
-    return list.some(item => item.md5 === md5 || item.md5sha1 === sha1);
+function isChecksumInList(filepath, sha1) {
+    const checksums = JSON.parse(fs.readFileSync(checksumList, 'utf8'));
+
+    const filename = filepath.split(/[/\\]+/).pop();
+    const checksum = checksums.find(item => item.name === filename);
+
+    if(checksum) {
+        return checksum.sha1 === sha1;
+    }
+
+    return false;
 }
+
+const removeDuplicates = (arr) => {
+    const seen = new Map();
+    return arr.filter(item => {
+      const key = `${item.gameTime}-${item.playerName}-${item.itemName}`;
+      return seen.has(key) ? false : seen.set(key, true);
+    });
+};
 
 module.exports = {
     init,

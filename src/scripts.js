@@ -44,9 +44,12 @@ function createRow(index, filename, validMap) {
     // title
     const title = document.createElement('h3');
     title.innerText = filename;
-    if (!validMap) {
-        title.style.color = 'red'
-    }
+
+    // Validation status
+    const validationStatus = document.createElement('span');
+    validationStatus.innerHTML = '✅ Verified Map';
+    validationStatus.style.color = 'green';
+    validationStatus.style.marginLeft = '10px'; 
 
     // body
     const body = document.createElement('p');
@@ -75,6 +78,9 @@ function createRow(index, filename, validMap) {
 
     resultDiv.appendChild(chatButton);
     resultDiv.appendChild(title);
+    if (validMap) {
+        resultDiv.appendChild(validationStatus);
+    }
     resultDiv.appendChild(body);
     resultDiv.appendChild(hoverPanel);
 
@@ -186,9 +192,7 @@ function fetchUpload(index, filename, data, username, mapname, message) {
     Version: ${gameData.version || 0}<br>
     Length: ${gameData.length}<br>
     Map: ${gameData.map}<br>
-    MD5: ${gameData.md5}<br>
-    MD5SHA1: ${gameData.md5sha1}<br>
-    Valid Map: ${gameData.validMap}<br>
+    SHA1: ${gameData.sha1}<br>
     Host: ${gameData.host}<br>
     Game Name: ${gameData.gameName}`;
 

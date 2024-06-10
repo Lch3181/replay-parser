@@ -63,6 +63,7 @@ button:hover {
 
 h3 {
     color: #bb86fc;
+    display: inline-block;
 }
 
 p {
